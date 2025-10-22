@@ -1,0 +1,618 @@
+@use "./import/variable" as *;
+@use "./import/mixin" as *;
+
+// Base Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Body
+body {
+  font-family: Futura, "Noto Sans JP", "Helvetica Neue", Arial,
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  background-color: #e8e8e8;
+  color: #333;
+}
+
+// Header
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #555;
+  border-bottom: min_vw_pc(2) solid #333;
+  z-index: 1000;
+  box-shadow: 0 min_vw_pc(2) min_vw_pc(4) rgba(0, 0, 0, 0.1);
+}
+
+.announcement {
+  background-color: #666;
+  padding: min_vw_pc(12) min_vw_pc(20);
+  text-align: center;
+  font-size: min_vw_pc(20);
+  color: white;
+  border-bottom: 1px solid #444;
+  overflow: hidden;
+
+  @include mq(max, sm) {
+    font-size: vw_sp(12);
+    padding: vw_sp(10) vw_sp(15);
+  }
+
+  &-list {
+    display: flex;
+    animation: scroll 15s linear infinite;
+    white-space: nowrap;
+  }
+
+  &-item {
+    padding: 0 min_vw_pc(30);
+    display: inline-block;
+
+    strong {
+      color: #ffff00;
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.header-container {
+  max-width: min_vw_pc(1360);
+  margin: 0 auto;
+  padding: min_vw_pc(12) min_vw_pc(20);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: min_vw_pc(20);
+
+  @include mq(max, md) {
+    flex-direction: column;
+    gap: vw_sp(8);
+    padding: vw_sp(10);
+    align-items: stretch;
+  }
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: min_vw_pc(30);
+
+  @include mq(max, md) {
+    flex-direction: row;
+    gap: vw_sp(8);
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+// ★追加: 会社名と電話番号のブロック
+.company-phone-block {
+  display: flex;
+  align-items: center;
+  gap: min_vw_pc(15);
+
+  @include mq(max, md) {
+    flex-direction: column;
+    gap: vw_sp(6);
+    align-items: flex-start;
+  }
+}
+
+// ★追加: 営業時間と特別営業のブロック
+.hours-block {
+  display: flex;
+  flex-direction: column;
+  gap: min_vw_pc(8);
+
+  @include mq(max, md) {
+    gap: vw_sp(4);
+  }
+}
+
+.company-name {
+  font-size: min_vw_pc(36);
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+
+  @include mq(max, sm) {
+    font-size: vw_sp(26);
+  }
+}
+
+.contact-info {
+  display: flex;
+  gap: min_vw_pc(25);
+  align-items: center;
+  font-size: min_vw_pc(14);
+  color: white;
+
+  @include mq(max, md) {
+    flex-direction: column;
+    gap: vw_sp(4);
+    width: auto;
+    font-size: vw_sp(11);
+    align-items: flex-start;
+  }
+}
+
+.contact-item {
+  font-size: min_vw_pc(20);
+  display: flex;
+  align-items: center;
+  gap: min_vw_pc(5);
+  white-space: nowrap;
+  color: white;
+
+  @include mq(max, sm) {
+    font-size: vw_sp(18);
+    gap: vw_sp(3);
+  }
+
+  strong {
+    font-size: min_vw_pc(20);
+    color: #ffff00;
+
+    @include mq(max, sm) {
+      font-size: vw_sp(18);
+    }
+  }
+}
+
+.special-hours {
+  font-size: min_vw_pc(20);
+  color: #ffff00;
+  margin-top: 0; // ★変更
+  font-weight: bold;
+
+  .SP {
+    display: none;
+  }
+
+  @include mq(max, sm) {
+    font-size: vw_sp(14);
+
+    .SP {
+      display: block;
+    }
+  }
+}
+
+.phone-item {
+  display: flex;
+  align-items: center;
+  gap: min_vw_pc(8);
+  background-color: #f0f0f0;
+  color: #555;
+  padding: min_vw_pc(8) min_vw_pc(16);
+  border-radius: min_vw_pc(6);
+  font-weight: bold;
+  font-size: min_vw_pc(36);
+  border: min_vw_pc(2) solid #999;
+  white-space: nowrap;
+  flex-shrink: 0; // ★追加
+
+  @include mq(max, sm) {
+    font-size: vw_sp(16);
+    padding: vw_sp(5) vw_sp(8);
+    gap: vw_sp(4);
+  }
+
+  a {
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.header-links {
+  display: flex;
+  gap: min_vw_pc(15);
+  align-items: center;
+  white-space: nowrap;
+
+  @include mq(max, md) {
+    width: 100%;
+    gap: vw_sp(8);
+    justify-content: center;
+  }
+
+  a {
+    font-size: min_vw_pc(16);
+    padding: min_vw_pc(8) min_vw_pc(8);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+
+    @include mq(max, md) {
+      flex: 1;
+      text-align: center;
+      padding: vw_sp(8) vw_sp(12);
+      font-size: vw_sp(12);
+    }
+  }
+}
+
+.company-link {
+  color: white;
+  border: min_vw_pc(2) solid white;
+
+  @include hover {
+    background-color: white;
+    color: #555;
+  }
+}
+
+.line-link {
+  background-color: #00b900;
+  color: white;
+
+  @include hover {
+    background-color: #009900;
+  }
+}
+
+// Main Content
+main {
+  padding: min_vw_pc(20);
+  max-width: min_vw_pc(1360);
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq(max, md) {
+    padding: vw_sp(25) vw_sp(15);
+  }
+
+  @include mq(max, sm) {
+    padding: vw_sp(15) vw_sp(10);
+  }
+}
+
+.hero-title {
+  text-align: center;
+  font-size: min_vw_pc(48);
+  font-weight: 900;
+  color: #e74c3c;
+  letter-spacing: min_vw_pc(2);
+  text-shadow: 0 min_vw_pc(2) min_vw_pc(4) rgba(0, 0, 0, 0.1);
+
+  @include mq(max, md) {
+    font-size: vw_sp(36);
+    margin-bottom: vw_sp(30);
+  }
+
+  @include mq(max, sm) {
+    font-size: vw_sp(28);
+    margin-bottom: vw_sp(20);
+  }
+}
+
+.hero-subtitle {
+  display: none;
+}
+
+// First Metal Card (Large)
+.metal-list-first {
+  padding-bottom: min_vw_pc(20);
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+
+  @include mq(max, md) {
+    grid-template-columns: 1fr;
+  }
+
+  .metal-image {
+    height: auto;
+    background: linear-gradient(135deg, #666 0%, #444 100%);
+
+    @include mq(max, md) {
+      // height: vw_sp(200);
+    }
+
+    @include mq(max, sm) {
+      // height: vw_sp(150);
+    }
+  }
+
+  .metal-details {
+    background: linear-gradient(135deg, #222 0%, #333 100%);
+    color: white;
+    padding: min_vw_pc(20) min_vw_pc(20);
+
+    @include mq(max, md) {
+      padding: vw_sp(30) vw_sp(20);
+    }
+
+    @include mq(max, sm) {
+      padding: vw_sp(20) vw_sp(15);
+    }
+  }
+
+  .metal-name {
+    font-size: min_vw_pc(54);
+    color: burlywood;
+    margin-bottom: min_vw_pc(0);
+
+    @include mq(max, md) {
+      font-size: vw_sp(30);
+    }
+
+    @include mq(max, sm) {
+      font-size: vw_sp(30);
+    }
+  }
+
+  .metal-price {
+    font-size: min_vw_pc(72);
+    font-weight: 900;
+    color: #e74c3c;
+    margin-bottom: min_vw_pc(25);
+    letter-spacing: min_vw_pc(3);
+    text-shadow: min_vw_pc(4) min_vw_pc(4) min_vw_pc(8) rgba(0, 0, 0, 0.7),
+      0 0 min_vw_pc(20) rgba(231, 76, 60, 0.4);
+    line-height: 1.1;
+    white-space: nowrap;
+
+    @include mq(max, md) {
+      font-size: vw_sp(48);
+      letter-spacing: vw_sp(2);
+    }
+
+    @include mq(max, sm) {
+      font-size: vw_sp(40);
+      letter-spacing: vw_sp(1);
+    }
+
+    span {
+      font-size: min_vw_pc(36);
+      color: #ccc;
+
+      @include mq(max, md) {
+        font-size: vw_sp(24);
+      }
+
+      @include mq(max, sm) {
+        font-size: vw_sp(20);
+      }
+    }
+  }
+
+  .metal-note {
+    font-size: min_vw_pc(20);
+    color: #ccc;
+
+    @include mq(max, md) {
+      font-size: vw_sp(16);
+    }
+  }
+}
+
+// Metal Card (Standard)
+.metal-card {
+  background: white;
+  border-radius: min_vw_pc(8);
+  overflow: hidden;
+  box-shadow: 0 min_vw_pc(2) min_vw_pc(8) rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: min_vw_pc(20);
+  height: 100%; // ★追加
+
+  @include hover {
+    box-shadow: 0 min_vw_pc(4) min_vw_pc(16) rgba(0, 0, 0, 0.15);
+    transform: translateY(min_vw_pc(-2));
+  }
+}
+
+.metal-image {
+  width: 100%;
+  height: min_vw_pc(200);
+  background: linear-gradient(135deg, #ccc 0%, #aaa 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: min_vw_pc(60);
+  color: rgba(0, 0, 0, 0.2);
+
+  @include mq(max, md) {
+    height: vw_sp(180);
+  }
+
+  @include mq(max, sm) {
+    height: vw_sp(200);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.metal-details {
+  padding: min_vw_pc(20);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  @include mq(max, md) {
+    padding: vw_sp(15);
+  }
+
+  @include mq(max, sm) {
+    padding: vw_sp(12);
+  }
+}
+
+.metal-name {
+  font-size: min_vw_pc(22);
+  font-weight: bold;
+  margin-bottom: min_vw_pc(6);
+  color: #555;
+
+  .SP {
+    display: none;
+  }
+
+  @include mq(max, md) {
+    font-size: vw_sp(18);
+
+    .SP {
+      display: block;
+    }
+  }
+
+  @include mq(max, sm) {
+    font-size: vw_sp(16);
+    margin-bottom: vw_sp(8);
+  }
+}
+
+.metal-price {
+  font-size: min_vw_pc(26);
+  color: #e74c3c;
+  font-weight: bold;
+  margin-bottom: min_vw_pc(15);
+
+  @include mq(max, md) {
+    font-size: vw_sp(22);
+  }
+
+  @include mq(max, sm) {
+    font-size: vw_sp(20);
+    margin-bottom: vw_sp(10);
+  }
+
+  span {
+    font-size: min_vw_pc(20);
+    color: #555;
+
+    @include mq(max, md) {
+      font-size: vw_sp(16);
+    }
+  }
+}
+
+.metal-note {
+  font-size: min_vw_pc(13);
+  color: #666;
+  line-height: 1.6;
+  flex: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 5;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+
+  @include mq(max, md) {
+    font-size: vw_sp(12);
+    line-clamp: 10;
+    -webkit-line-clamp: 10;
+  }
+}
+
+// Grid for smaller cards
+.metals-grid-small {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min_vw_pc(260), 1fr));
+  gap: min_vw_pc(20);
+
+  @include mq(max, md) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Footer
+footer {
+  background-color: #555;
+  color: white;
+  padding: min_vw_pc(40) min_vw_pc(20);
+  margin-top: min_vw_pc(60);
+
+  @include mq(max, md) {
+    padding: vw_sp(30) vw_sp(10);
+    margin-top: vw_sp(40);
+  }
+}
+
+.footer-container {
+  max-width: min_vw_pc(1200);
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min_vw_pc(250), 1fr));
+  gap: min_vw_pc(40);
+  margin-bottom: min_vw_pc(30);
+
+  @include mq(max, md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: vw_sp(15) vw_sp(10);
+    margin-bottom: vw_sp(20);
+  }
+}
+
+.footer-section {
+  h3 {
+    margin-bottom: min_vw_pc(15);
+    font-size: min_vw_pc(16);
+    color: #ccc;
+
+    @include mq(max, md) {
+      font-size: vw_sp(13);
+      margin-bottom: vw_sp(8);
+    }
+  }
+
+  p {
+    font-size: min_vw_pc(14);
+    line-height: 1.8;
+    color: #ddd;
+
+    @include mq(max, md) {
+      font-size: vw_sp(11);
+      line-height: 1.6;
+    }
+  }
+
+  &:nth-child(3) {
+    @include mq(max, md) {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.footer-divider {
+  border-top: 1px solid #666;
+  padding-top: min_vw_pc(20);
+  text-align: center;
+  color: #999;
+  font-size: min_vw_pc(13);
+
+  @include mq(max, md) {
+    padding-top: vw_sp(15);
+    font-size: vw_sp(10);
+  }
+}
