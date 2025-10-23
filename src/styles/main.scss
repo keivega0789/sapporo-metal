@@ -495,8 +495,16 @@ main {
   font-weight: bold;
   margin-bottom: min_vw_pc(15);
 
+  .SP {
+    display: none;
+  }
+
   @include mq(max, md) {
     font-size: vw_sp(22);
+
+    .SP {
+      display: block;
+    }
   }
 
   @include mq(max, sm) {
@@ -587,13 +595,21 @@ footer {
   }
 
   p {
-    font-size: min_vw_pc(14);
+    font-size: min_vw_pc(18);
     line-height: 1.8;
     color: #ddd;
+
+    strong {
+      font-size: min_vw_pc(30);
+    }
 
     @include mq(max, md) {
       font-size: vw_sp(11);
       line-height: 1.6;
+
+      strong {
+        font-size: vw_sp(16);
+      }
     }
   }
 
