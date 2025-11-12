@@ -67,7 +67,7 @@ header {
   }
 }
 
-.header-container {
+.header-inner {
   max-width: min_vw_pc(1360);
   margin: 0 auto;
   padding: min_vw_pc(12) min_vw_pc(20);
@@ -320,7 +320,7 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .metal-image {
+  .metal-img {
     height: auto;
     background: linear-gradient(135deg, #666 0%, #444 100%);
 
@@ -396,7 +396,7 @@ main {
     }
   }
 
-  .metal-note {
+  .metal-description {
     font-size: min_vw_pc(20);
     color: #ccc;
 
@@ -407,7 +407,7 @@ main {
 }
 
 // Metal Card (Standard)
-.metal-card {
+.metal-item {
   background: white;
   border-radius: min_vw_pc(8);
   overflow: hidden;
@@ -425,7 +425,7 @@ main {
   }
 }
 
-.metal-image {
+.metal-img {
   width: 100%;
   height: min_vw_pc(200);
   background: linear-gradient(135deg, #ccc 0%, #aaa 100%);
@@ -522,7 +522,7 @@ main {
   }
 }
 
-.metal-note {
+.metal-description {
   font-size: min_vw_pc(13);
   color: #666;
   line-height: 1.6;
@@ -541,7 +541,7 @@ main {
 }
 
 // Grid for smaller cards
-.metals-grid-small {
+.metals-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min_vw_pc(260), 1fr));
   gap: min_vw_pc(20);
@@ -564,7 +564,7 @@ footer {
   }
 }
 
-.footer-container {
+.footer-inner {
   max-width: min_vw_pc(1200);
   margin: 0 auto;
 }
