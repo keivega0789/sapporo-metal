@@ -100,7 +100,7 @@ header {
 }
 
 // ★追加: 会社名と電話番号のブロック
-.company-phone-block {
+.company-contact {
   display: flex;
   align-items: center;
   gap: min_vw_pc(15);
@@ -113,7 +113,7 @@ header {
 }
 
 // ★追加: 営業時間と特別営業のブロック
-.hours-block {
+.hours {
   display: flex;
   flex-direction: column;
   gap: min_vw_pc(8);
@@ -150,7 +150,7 @@ header {
   }
 }
 
-.contact-item {
+.contact {
   font-size: min_vw_pc(20);
   display: flex;
   align-items: center;
@@ -192,7 +192,7 @@ header {
   }
 }
 
-.phone-item {
+.phone {
   display: flex;
   align-items: center;
   gap: min_vw_pc(8);
@@ -273,17 +273,9 @@ header {
 
 // Main Content
 main {
-  padding: min_vw_pc(20);
-  max-width: min_vw_pc(1360);
-  margin-left: auto;
-  margin-right: auto;
-
-  @include mq(max, md) {
-    padding: vw_sp(25) vw_sp(15);
-  }
-
-  @include mq(max, sm) {
-    padding: vw_sp(15) vw_sp(10);
+  @include mq(min, lg) {
+    padding: min_vw_pc(20);
+    max-width: 1440rem;
   }
 }
 
