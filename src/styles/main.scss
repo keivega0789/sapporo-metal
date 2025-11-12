@@ -30,9 +30,7 @@ header {
 
 .announcement {
   background-color: #666;
-  padding: min_vw_pc(12) min_vw_pc(20);
   text-align: center;
-  font-size: min_vw_pc(20);
   color: white;
   border-bottom: 1px solid #444;
   overflow: hidden;
@@ -63,13 +61,13 @@ header {
 }
 
 .header-inner {
-  max-width: min_vw_pc(1360);
+  max-width: min_vw_pc(1440);
   margin: 0 auto;
   padding: min_vw_pc(12) min_vw_pc(20);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
+  // flex-wrap: nowrap;
   gap: min_vw_pc(20);
 }
 
@@ -85,12 +83,6 @@ header {
   gap: min_vw_pc(15);
 }
 
-.hours {
-  display: flex;
-  flex-direction: column;
-  gap: min_vw_pc(8);
-}
-
 .company-name {
   font-size: min_vw_pc(36);
   font-weight: bold;
@@ -98,12 +90,10 @@ header {
   white-space: nowrap;
 }
 
-.contact-info {
+.hours {
   display: flex;
-  gap: min_vw_pc(25);
-  align-items: center;
-  font-size: min_vw_pc(14);
-  color: white;
+  flex-direction: column;
+  gap: min_vw_pc(8);
 }
 
 .contact {
@@ -160,14 +150,16 @@ header {
 .header-links {
   display: flex;
   gap: min_vw_pc(15);
-  align-items: center;
-  white-space: nowrap;
+  justify-content: stretch;
+  width: min_vw_pc(400);
 
   a {
+    width: 100%;
     font-size: min_vw_pc(16);
     padding: min_vw_pc(8) min_vw_pc(8);
     border-radius: 4px;
     text-decoration: none;
+    text-align: center;
     font-weight: bold;
     transition: all 0.3s ease;
   }
@@ -175,7 +167,7 @@ header {
 
 .company-link {
   color: white;
-  border: min_vw_pc(2) solid white;
+  border: 0.1rem solid white;
 
   @include hover {
     background-color: white;
@@ -194,10 +186,7 @@ header {
 
 // Main Content
 main {
-  @include mq(max, lg) {
-    padding: min_vw_pc(20);
-    max-width: 1440rem;
-  }
+  padding: min_vw_pc(12) min_vw_pc(20);
 }
 
 .hero-title {
@@ -221,102 +210,6 @@ main {
 
 .hero-subtitle {
   display: none;
-}
-
-// First Metal Card (Large)
-.metal-list-first {
-  padding-bottom: min_vw_pc(20);
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-
-  @include mq(max, md) {
-    grid-template-columns: 1fr;
-  }
-
-  .metal-img {
-    height: auto;
-    background: linear-gradient(135deg, #666 0%, #444 100%);
-
-    @include mq(max, md) {
-      // height: vw_sp(200);
-    }
-
-    @include mq(max, sm) {
-      // height: vw_sp(150);
-    }
-  }
-
-  .metal-details {
-    background: linear-gradient(135deg, #222 0%, #333 100%);
-    color: white;
-    padding: min_vw_pc(20) min_vw_pc(20);
-
-    @include mq(max, md) {
-      padding: vw_sp(30) vw_sp(20);
-    }
-
-    @include mq(max, sm) {
-      padding: vw_sp(20) vw_sp(15);
-    }
-  }
-
-  .metal-name {
-    font-size: min_vw_pc(54);
-    color: burlywood;
-    margin-bottom: min_vw_pc(0);
-
-    @include mq(max, md) {
-      font-size: vw_sp(30);
-    }
-
-    @include mq(max, sm) {
-      font-size: vw_sp(30);
-    }
-  }
-
-  .metal-price {
-    font-size: min_vw_pc(72);
-    font-weight: 900;
-    color: #e74c3c;
-    margin-bottom: min_vw_pc(25);
-    letter-spacing: min_vw_pc(3);
-    text-shadow: min_vw_pc(4) min_vw_pc(4) min_vw_pc(8) rgba(0, 0, 0, 0.7),
-      0 0 min_vw_pc(20) rgba(231, 76, 60, 0.4);
-    line-height: 1.1;
-    white-space: nowrap;
-
-    @include mq(max, md) {
-      font-size: vw_sp(48);
-      letter-spacing: vw_sp(2);
-    }
-
-    @include mq(max, sm) {
-      font-size: vw_sp(40);
-      letter-spacing: vw_sp(1);
-    }
-
-    span {
-      font-size: min_vw_pc(36);
-      color: #ccc;
-
-      @include mq(max, md) {
-        font-size: vw_sp(24);
-      }
-
-      @include mq(max, sm) {
-        font-size: vw_sp(20);
-      }
-    }
-  }
-
-  .metal-description {
-    font-size: min_vw_pc(20);
-    color: #ccc;
-
-    @include mq(max, md) {
-      font-size: vw_sp(16);
-    }
-  }
 }
 
 // Metal Card (Standard)
@@ -575,7 +468,7 @@ footer {
   }
 }
 
-@include mq(max, md) {
+@include mq(max, sm) {
   .header-inner {
     flex-direction: column;
     gap: vw_sp(8);
@@ -597,13 +490,6 @@ footer {
   .hours {
     gap: vw_sp(4);
   }
-  .contact-info {
-    flex-direction: column;
-    gap: vw_sp(4);
-    width: auto;
-    font-size: vw_sp(11);
-    align-items: flex-start;
-  }
   .header-links {
     width: 100%;
     gap: vw_sp(8);
@@ -616,6 +502,20 @@ footer {
     }
   }
 }
+@include mq(min-max, sm, lg) {
+  .header-links {
+    flex-direction: column;
+    align-items: stretch;
+    width: min_vw_pc(250);
+  }
+  .special-hours {
+    font-size: min_vw_pc(16);
+  }
+}
 
 @include mq(min, 1440) {
+  .announcement {
+    padding: min_vw_pc(12) min_vw_pc(20);
+    font-size: min_vw_pc(20);
+  }
 }
