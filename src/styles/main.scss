@@ -190,7 +190,7 @@ main {
 }
 
 .section-title {
-  font-size: min_vw_pc(32);
+  font-size: min_vw_pc(40);
   text-align: center;
   margin-bottom: 1rem;
   font-weight: bold;
@@ -198,7 +198,7 @@ main {
 
 .metals-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min_vw_pc(360), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min_vw_pc(430), 1fr));
   gap: 1rem;
 }
 
@@ -208,13 +208,13 @@ main {
   box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  height: min_vw_pc(630);
+  height: min_vw_pc(430);
   overflow: hidden;
 }
 
 .metal-img {
   width: 100%;
-  height: min_vw_pc(230);
+  height: min_vw_pc(220);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -237,14 +237,15 @@ main {
   font-size: min_vw_pc(32);
   font-weight: bold;
   color: #555;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 .metal-price {
-  font-size: min_vw_pc(40);
+  font-size: vw_sp(10);
   color: #e74c3c;
   font-weight: bold;
   margin-bottom: min_vw_pc(6);
+  line-height: 1.3;
 
   span {
     font-size: min_vw_pc(20);
@@ -356,8 +357,9 @@ footer {
 
 @include mq(max, sm) {
   .announcement {
-    font-size: vw_sp(12);
-    padding: vw_sp(10) vw_sp(15);
+    // font-size: vw_sp(12);
+    // padding: vw_sp(10) vw_sp(15);
+    display: none;
   }
   .company-name {
     font-size: vw_sp(26);
@@ -384,19 +386,20 @@ footer {
   .header-inner {
     flex-direction: column;
     gap: vw_sp(8);
-    padding: 1.2rem;
+    padding: 0.5rem;
     align-items: stretch;
+    justify-content: center;
   }
   .company-info {
     flex-direction: row;
-    gap: vw_sp(8);
+    gap: vw_sp(20);
     width: 100%;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: center;
   }
   .company-contact {
     flex-direction: column;
-    gap: vw_sp(6);
+    gap: vw_sp(3);
     align-items: flex-start;
   }
   .hours {
@@ -421,30 +424,38 @@ footer {
     margin-bottom: 0.5rem;
   }
   .metals-list {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
   }
   .metal-item {
-    height: vw_sp(400);
+    height: vw_sp(230);
   }
   .metal-img {
-    height: vw_sp(200);
+    height: vw_sp(100);
   }
   .metal-details {
-    padding: vw_sp(10);
+    padding: vw_sp(5);
   }
   .metal-name {
-    font-size: vw_sp(24);
+    font-size: vw_sp(16);
+    // line-height: 1;
+    // min-height: vw_sp(32);
   }
   .metal-price {
-    font-size: vw_sp(32);
-    margin-bottom: vw_sp(3);
+    min-height: vw_sp(36);
+    font-size: vw_sp(28);
+    // line-height: 1.3;
     span {
       font-size: vw_sp(16);
+    }
+    &.sm {
+      font-size: vw_sp(16);
+      line-height: 2;
     }
   }
   .metal-description {
     font-size: vw_sp(14);
+    line-height: 1.3;
   }
 }
 
@@ -463,5 +474,8 @@ footer {
   }
   .special-hours {
     font-size: min_vw_pc(16);
+  }
+  .metal-price {
+    font-size: min_vw_pc(36);
   }
 }
