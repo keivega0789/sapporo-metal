@@ -186,33 +186,21 @@ header {
 
 // Main Content
 main {
-  padding: min_vw_pc(12) min_vw_pc(20);
+  padding: 1.2rem;
 }
 
-.hero-title {
+.section-title {
+  font-size: min_vw_pc(32);
   text-align: center;
-  font-size: min_vw_pc(48);
-  font-weight: 900;
-  color: #e74c3c;
-  letter-spacing: min_vw_pc(2);
-  text-shadow: 0 min_vw_pc(2) min_vw_pc(4) rgba(0, 0, 0, 0.1);
-
-  @include mq(max, md) {
-    font-size: vw_sp(36);
-    margin-bottom: vw_sp(30);
-  }
-
-  @include mq(max, sm) {
-    font-size: vw_sp(28);
-    margin-bottom: vw_sp(20);
-  }
+  margin-bottom: 1rem;
 }
 
-.hero-subtitle {
-  display: none;
+.metals-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min_vw_pc(300), 1fr));
+  gap: min_vw_pc(20);
 }
 
-// Metal Card (Standard)
 .metal-item {
   background: white;
   border-radius: min_vw_pc(8);
@@ -223,7 +211,7 @@ main {
   display: flex;
   flex-direction: column;
   margin-bottom: min_vw_pc(20);
-  height: 100%; // ★追加
+  height: 100%;
 
   @include hover {
     box-shadow: 0 min_vw_pc(4) min_vw_pc(16) rgba(0, 0, 0, 0.15);
@@ -238,16 +226,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: min_vw_pc(60);
   color: rgba(0, 0, 0, 0.2);
-
-  @include mq(max, md) {
-    height: vw_sp(180);
-  }
-
-  @include mq(max, sm) {
-    height: vw_sp(200);
-  }
 
   img {
     width: 100%;
@@ -262,10 +241,6 @@ main {
   display: flex;
   flex-direction: column;
 
-  @include mq(max, md) {
-    padding: vw_sp(15);
-  }
-
   @include mq(max, sm) {
     padding: vw_sp(12);
   }
@@ -276,18 +251,6 @@ main {
   font-weight: bold;
   margin-bottom: min_vw_pc(6);
   color: #555;
-
-  .SP {
-    display: none;
-  }
-
-  @include mq(max, md) {
-    font-size: vw_sp(18);
-
-    .SP {
-      display: block;
-    }
-  }
 
   @include mq(max, sm) {
     font-size: vw_sp(16);
@@ -300,18 +263,6 @@ main {
   color: #e74c3c;
   font-weight: bold;
   margin-bottom: min_vw_pc(15);
-
-  .SP {
-    display: none;
-  }
-
-  @include mq(max, md) {
-    font-size: vw_sp(22);
-
-    .SP {
-      display: block;
-    }
-  }
 
   @include mq(max, sm) {
     font-size: vw_sp(20);
@@ -328,8 +279,15 @@ main {
   }
 }
 
+.visible-sp {
+  display: none;
+  @include mq(max, sm) {
+    display: block;
+  }
+}
+
 .metal-description {
-  font-size: min_vw_pc(13);
+  font-size: min_vw_pc(18);
   color: #666;
   line-height: 1.6;
   flex: 1;
@@ -339,21 +297,10 @@ main {
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 
-  @include mq(max, md) {
+  @include mq(max, sm) {
     font-size: vw_sp(12);
     line-clamp: 10;
     -webkit-line-clamp: 10;
-  }
-}
-
-// Grid for smaller cards
-.metals-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min_vw_pc(260), 1fr));
-  gap: min_vw_pc(20);
-
-  @include mq(max, md) {
-    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -466,13 +413,10 @@ footer {
     padding: vw_sp(5) vw_sp(8);
     gap: vw_sp(4);
   }
-}
-
-@include mq(max, sm) {
   .header-inner {
     flex-direction: column;
     gap: vw_sp(8);
-    padding: vw_sp(10);
+    padding: 1.2rem;
     align-items: stretch;
   }
   .company-info {
@@ -501,7 +445,31 @@ footer {
       font-size: vw_sp(12);
     }
   }
+  main {
+    padding: 0.5rem;
+  }
+  .section-title {
+    font-size: vw_sp(20);
+    margin-bottom: 0.5rem;
+  }
+  .metals-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .metal-item {
+    height: vw_sp(400);
+  }
+  .metal-img {
+    height: vw_sp(150);
+  }
 }
+
+@include mq(min, sm) {
+  .announcement {
+    padding: min_vw_pc(12) min_vw_pc(20);
+    font-size: min_vw_pc(20);
+  }
+}
+
 @include mq(min-max, sm, lg) {
   .header-links {
     flex-direction: column;
@@ -510,12 +478,5 @@ footer {
   }
   .special-hours {
     font-size: min_vw_pc(16);
-  }
-}
-
-@include mq(min, 1440) {
-  .announcement {
-    padding: min_vw_pc(12) min_vw_pc(20);
-    font-size: min_vw_pc(20);
   }
 }
