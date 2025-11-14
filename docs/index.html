@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <!-- 旧サイトからのメタタグ情報を持ってくる -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>札幌金属興業 - 非鉄金属買取</title>
-    <script type="module" crossorigin src="/sapporo-metal/assets/index-Cmsa_YZD.js"></script>
-    <link rel="stylesheet" crossorigin href="/sapporo-metal/assets/index-C7_X0AHh.css">
+    <script type="module" crossorigin src="/sapporo-metal/assets/index-oTNSyZRu.js"></script>
+    <link rel="stylesheet" crossorigin href="/sapporo-metal/assets/index-a_wRFA29.css">
   </head>
   <body>
     <header>
-      <div class="announcement">
+      <aside class="announcement" aria-label="お知らせ">
         <div class="announcement-list">
           <div class="announcement-item">
             📢 <strong>現在、銅・真鍮が高値買取中です！</strong>
@@ -20,189 +21,216 @@
           <div class="announcement-item">
             💰 <strong>まとめ売りで査定額アップ！</strong>
           </div>
-          <div class="announcement-item">
-            📢 <strong>現在、銅・真鍮が高値買取中です！</strong>
-          </div>
         </div>
-      </div>
-      <div class="header-container">
+      </aside>
+
+      <div class="header-inner">
         <div class="company-info">
-          <div class="company-phone-block">
-            <div class="company-name">札幌金属興業</div>
-            <div class="phone-item">
-              ☎ <a href="tel:0806073-5065">080-6073-5065</a>
+          <div class="company-contact">
+            <h1 class="company-name">札幌金属興業</h1>
+            <div class="phone">
+              ☎ <a href="tel:080-6073-5065">080-6073-5065</a>
             </div>
           </div>
-          <div class="hours-block">
-            <div class="contact-item">
-              <strong>営業時間:</strong> 9:30～16:30
-            </div>
+          <div class="hours">
+            <div class="contact"><strong>営業時間:</strong> 9:30～16:30</div>
             <div class="special-hours">
-              🎉 11月の日曜営業日<br class="SP" />
+              🎉 11月の日曜営業日<br />
               x日・x日・x日・x日・x日
             </div>
           </div>
         </div>
         <div class="header-links">
           <a href="/" class="company-link">会社概要</a>
-          <!-- target="_blank"いれる -->
+          <!--TODO: target="_blank"いれる -->
           <a href="/" class="line-link">LINE相談</a>
         </div>
       </div>
     </header>
 
     <main>
-      <!-- <h1 class="hero-title">高価買取中！</h1> -->
-
-      <!-- 1番目のカード - 大きく表示 -->
-      <div class="metal-list-first">
-        <div class="metal-image">
-          <img
-            src="/sapporo-metal/assets/1-Dv1Zcwg1.jpeg"
-            alt="ピカ銅線"
-            width="1360"
-            height="550"
-          />
-        </div>
-        <div class="metal-details">
-          <div class="metal-name">ピカ銅線</div>
-          <div class="metal-price">1,500円<span>/kg</span></div>
-          <div class="metal-note">
-            <p>
-              断面の直径が1.3mm以上<br />
-              メッキ、エナメルが劣化のないもの。<br />
-              ※塗装、紙の付着は減額の対象となります。
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2番目以降のカード - グリッドで並ぶ -->
-      <div class="metals-grid-small">
-        <div class="metal-card">
-          <div class="metal-image">
+      <h2 class="section-title">買取品目一覧</h2>
+      <ul class="metals-list">
+        <li class="metal-item">
+          <div class="metal-img">
             <img
-              src="/sapporo-metal/assets/12-C5WKcaat.jpeg"
+              src="/sapporo-metal/assets/metal-01-C0KMw1uY.jpg"
+              alt="ピカ銅線"
+              width="1360"
+              height="550"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="metal-details">
+            <div class="metal-name">ピカ銅線</div>
+            <div class="metal-price">1,500円<span>/kg</span></div>
+            <div class="metal-description">
+              <p>
+                断面の直径が1.3mm以上<br />
+                付着物が有る場合は<br class="visible-sp" />込銅となります
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li class="metal-item">
+          <div class="metal-img">
+            <img
+              src="/sapporo-metal/assets/metal-02-C4ZoMtDK.jpg"
+              alt="被覆線（銅率80程度）"
+              width="1360"
+              height="550"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="metal-details">
+            <div class="metal-name">被覆線(銅率80%程度)</div>
+            <div class="metal-price">240円<span>/kg</span></div>
+            <div class="metal-description">
+              銅率80%程度/<br class="visible-sp" />内部の銅線が1.3mm以上
+              CVT・IV60m,100m,150m<br />
+              <!-- ◎端子、ジョイント等の不純物が付いていると減額の対象となります。 -->
+            </div>
+          </div>
+        </li>
+
+        <li class="metal-item">
+          <div class="metal-img">
+            <img
+              src="/sapporo-metal/assets/metal-03-DEWqUH2p.jpg"
               alt="並銅"
               width="1360"
               height="550"
+              fetchpriority="high"
             />
           </div>
           <div class="metal-details">
             <div class="metal-name">並銅</div>
             <div class="metal-price">1,450円<span>/kg</span></div>
-            <div class="metal-note">説明文</div>
+            <div class="metal-description">新品同様</div>
           </div>
-        </div>
+        </li>
 
-        <div class="metal-card">
-          <div class="metal-image">
+        <li class="metal-item">
+          <div class="metal-img">
             <img
-              src="/sapporo-metal/assets/2-BRUT7nb5.jpeg"
+              src="/sapporo-metal/assets/metal-04-DHazglUe.jpg"
               alt="込銅・下銅"
               width="1360"
               height="550"
+              fetchpriority="high"
             />
           </div>
           <div class="metal-details">
             <div class="metal-name">込銅・下銅</div>
             <div class="metal-price">1,430円<span>/kg</span></div>
-            <div class="metal-note">
-              変色や劣化していても大丈夫ですがスプリング、ビニールテープキャップ、断熱材は除去してください。
-              真鍮が付き過ぎていると真鍮での買取となります。
+            <div class="metal-description">
+              サビ,溶接,劣化OK<br />
+              真鍮,プラ除去済みの状態
             </div>
           </div>
-        </div>
+        </li>
 
-        <div class="metal-card">
-          <div class="metal-image">
-            <img src="/sapporo-metal/assets/3-DFAIXEJb.jpeg" alt="砲金" width="1360" height="550" />
-          </div>
-          <div class="metal-details">
-            <div class="metal-name">砲金</div>
-            <div class="metal-price">1,260円<span>/kg</span></div>
-            <div class="metal-note">
-              <!-- 920円の部分は強調 -->
-              真鍮が付いていると真鍮扱いとなります。<br />
-              エコ砲金は920円/kgでの買取です。
-            </div>
-          </div>
-        </div>
-
-        <div class="metal-card">
-          <div class="metal-image">
+        <li class="metal-item">
+          <div class="metal-img">
             <img
-              src="/sapporo-metal/assets/19-C8fuhYYJ.jpeg"
-              alt="メッキ砲金"
+              src="/sapporo-metal/assets/metal-05-CklrYD-N.jpg"
+              alt="砲金"
               width="1360"
               height="550"
+              loading="lazy"
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">メッキ砲金</div>
+            <div class="metal-name">砲金・メッキ砲金</div>
             <div class="metal-price">1,260円<span>/kg</span></div>
-            <div class="metal-note">説明文</div>
+            <div class="metal-description">
+              真鍮が付いていると<br class="visible-sp" />真鍮扱いとなります
+            </div>
           </div>
-        </div>
+        </li>
 
-        <div class="metal-card">
-          <div class="metal-image">
+        <li class="metal-item">
+          <div class="metal-img">
             <img
-              src="/sapporo-metal/assets/4-WRwF6HbA.jpeg"
+              src="/sapporo-metal/assets/metal-06-CtDYnAK2.jpg"
               alt="込真鍮"
               width="1360"
               height="550"
+              loading="lazy"
             />
           </div>
           <div class="metal-details">
             <div class="metal-name">込真鍮</div>
             <div class="metal-price">900円<span>/kg</span></div>
-            <div class="metal-note">
-              ダスト3%以下、ゴムパッキン、シール材が付着している状態。鉄、プラスチックが除去してあるもの。
+            <div class="metal-description">
+              ゴム,パッキン,シール<br class="visible-sp" />付着⚪︎
             </div>
           </div>
-        </div>
+        </li>
 
-        <div class="metal-card">
-          <div class="metal-image">
+        <li class="metal-item">
+          <div class="metal-img">
             <img
-              src="/sapporo-metal/assets/5-Qbk2qtR8.jpeg"
+              src="/sapporo-metal/assets/metal-07-YlbU0TWx.jpg"
               alt="真鍮（未処理）"
               width="1360"
               height="550"
+              loading="lazy"
             />
           </div>
           <div class="metal-details">
             <div class="metal-name">真鍮（未処理）</div>
             <div class="metal-price">800円<span>/kg</span></div>
-            <div class="metal-note">
-              プラスチックが付着している状態。<br />
-              シャワーホースが付いていると１本につき１ｋｇ商重重量から差引いたします。<br />
-              鉄の付着した状態は減額の対象となります
+            <div class="metal-description">
+              プラスチック付⚪︎<br />
+              シャワーホース、鉄除去済
             </div>
           </div>
-        </div>
+        </li>
 
-        <div class="metal-card">
-          <div class="metal-image">
+        <li class="metal-item">
+          <div class="metal-img">
             <img
-              src="/sapporo-metal/assets/18-QV_93SOQ.jpeg"
+              src="/sapporo-metal/assets/metal-08-Cr6oengR.jpg"
               alt="真鍮（付物無し）"
               width="1360"
               height="550"
+              loading="lazy"
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">真鍮（付物無し）</div>
+            <div class="metal-name">真鍮（付着物無）</div>
             <div class="metal-price">920円<span>/kg</span></div>
-            <div class="metal-note">説明文</div>
+            <div class="metal-description"></div>
           </div>
-        </div>
+        </li>
 
-        <div class="metal-card">
-          <div class="metal-image">
+        <li class="metal-item">
+          <div class="metal-img">
             <img
-              src="/sapporo-metal/assets/22-Dyx5vREU.jpeg"
+              src="/sapporo-metal/assets/metal-09-DNFFbcya.jpg"
+              alt="真鍮メダル"
+              width="1360"
+              height="550"
+              loading="lazy"
+            />
+          </div>
+          <div class="metal-details">
+            <div class="metal-name">真鍮メダル</div>
+            <div class="metal-price">880円<span>/kg</span></div>
+            <div class="metal-description">
+              無垢 / 900円<br />
+              メッキ / 880円<br />
+              MIXメダル / 120円
+            </div>
+          </div>
+        </li>
+
+        <!-- <li class="metal-item">
+          <div class="metal-img">
+            <img
+              src="src/images/22.jpeg"
               alt="真鍮粉・砲金粉"
               width="1360"
               height="550"
@@ -211,183 +239,149 @@
           <div class="metal-details">
             <div class="metal-name">真鍮粉・砲金粉</div>
             <div class="metal-price">時価</div>
-            <div class="metal-note">
+            <div class="metal-description">
               青銅・リン青銅・アルミ青銅さらにはニッケル等も買取対応いたします。
             </div>
           </div>
-        </div>
+        </li> -->
 
-        <div class="metal-card">
-          <div class="metal-image">
+        <li class="metal-item">
+          <div class="metal-img">
             <img
-              src="/sapporo-metal/assets/23-CC2KLQAT.jpeg"
-              alt="真鍮メダル"
-              width="1360"
-              height="550"
-            />
-          </div>
-          <div class="metal-details">
-            <div class="metal-name">真鍮メダル</div>
-            <div class="metal-price">880円<span>/kg</span></div>
-            <div class="metal-note">
-              無垢 / 900円<br />
-              メッキ / 880円<br />
-              MIXメダル / 120円
-            </div>
-          </div>
-        </div>
-
-        <div class="metal-card">
-          <div class="metal-image">
-            <img
-              src="/sapporo-metal/assets/6-EWC_DMig.jpeg"
+              src="/sapporo-metal/assets/metal-10-C7-OCRYo.jpg"
               alt="ボイラー（銅釜）"
               width="1360"
               height="550"
+              loading="lazy"
             />
           </div>
           <div class="metal-details">
             <div class="metal-name">ボイラー（銅釜）</div>
             <div class="metal-price">240円<span>/kg</span></div>
-            <div class="metal-note">
-              銅の釜が付いているもの。鉄配管は除去してください。
+            <div class="metal-description">
+              銅の釜が付いているもの。<br class="visible-sp" />
+              鉄配管除去済のもの
             </div>
           </div>
-        </div>
+        </li>
 
-        <div class="metal-card">
-          <div class="metal-image">
+        <li class="metal-item">
+          <div class="metal-img">
             <img
-              src="/sapporo-metal/assets/21-BDW0ATo5.jpeg"
+              src="/sapporo-metal/assets/metal-11-QPIK0ZaZ.jpg"
               alt="銅釜"
               width="1360"
               height="550"
+              loading="lazy"
             />
           </div>
           <div class="metal-details">
             <div class="metal-name">銅釜</div>
             <div class="metal-price">1,300円<span>/kg</span></div>
-            <div class="metal-note">説明文</div>
+            <div class="metal-description"></div>
           </div>
-        </div>
+        </li>
 
-        <div class="metal-card">
-          <div class="metal-image">
+        <li class="metal-item">
+          <div class="metal-img">
             <img
-              src="/sapporo-metal/assets/8-DkTtCJda.jpeg"
+              src="/sapporo-metal/assets/metal-12-C6hVtXFb.jpg"
               alt="Fケーブル・VA線"
               width="1360"
               height="550"
+              loading="lazy"
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">Fケーブル・VA線</div>
+            <div class="metal-name">VVFケーブル</div>
             <div class="metal-price">580円<span>/kg</span></div>
-            <div class="metal-note">
-              銅率40%程度。<br />
-              内部の銅線が1.3mm以上のもの。
+            <div class="metal-description">
+              銅率40%程度<br />
+              内部の銅線が1.3mm以上
             </div>
           </div>
-        </div>
+        </li>
 
-        <div class="metal-card">
-          <div class="metal-image">
+        <li class="metal-item">
+          <div class="metal-img">
             <img
-              src="/sapporo-metal/assets/9-6N5Ad0S7.jpeg"
+              src="/sapporo-metal/assets/metal-13-CKC-EoOz.jpg"
               alt="工業廃線"
               width="1360"
               height="550"
+              loading="lazy"
             />
           </div>
           <div class="metal-details">
             <div class="metal-name">工業廃線</div>
             <div class="metal-price">470円<span>/kg</span></div>
-            <div class="metal-note">
-              銅率40%以下。 <br />
-              状態や銅率により単価を決定します。<br />
-              銅軸線は買取の対象になりません。
+            <div class="metal-description">
+              銅率40%以下 <br />
+              状態,銅率により単価決定<br />
+              銅軸線は買取の対象外です
             </div>
           </div>
-        </div>
+        </li>
 
-        <div class="metal-card">
-          <div class="metal-image">
+        <li class="metal-item">
+          <div class="metal-img">
             <img
-              src="/sapporo-metal/assets/13-CQT7qIZF.jpeg"
+              src="/sapporo-metal/assets/metal-14-kZDwXM-e.jpg"
               alt="銅割合電線"
               width="1360"
               height="550"
+              loading="lazy"
             />
           </div>
           <div class="metal-details">
             <div class="metal-name">銅割合電線</div>
-            <div class="metal-price">240円〜1,120円<span>/kg</span></div>
-            <div class="metal-note">
-              銅率60%のもの / 800円<br />
-              CV / 三芯<br />
-              工業廃電線 / 480円<br />
-              3.5mm, 1.25mmそれ以下のもの
+            <div class="metal-price sm">240円〜1,120円<span>/kg</span></div>
+            <div class="metal-description">
+              銅率60%のもの: 800円<br />
+              CV,三芯,工業廃電線: 480円<br />
+              3.5mm, 1.25mm,左記以下
             </div>
           </div>
-        </div>
+        </li>
 
-        <div class="metal-card">
-          <div class="metal-image">
+        <li class="metal-item">
+          <div class="metal-img">
             <img
-              src="/sapporo-metal/assets/11-BjuZ2Tho.jpeg"
-              alt="被覆線（銅率80程度）"
-              width="1360"
-              height="550"
-            />
-          </div>
-          <div class="metal-details">
-            <div class="metal-name">被覆線<br class="SP" />（銅率80%程度）</div>
-            <div class="metal-price">240円<span>/kg</span></div>
-            <div class="metal-note">
-              銅率80%程度。<br />
-              内部の銅線が1.3mm以上のもの。<br />
-              CVT・IV60m・100m・150m<br />
-              ◎端子、ジョイント等の不純物が付いていると減額の対象となります。
-            </div>
-          </div>
-        </div>
-
-        <div class="metal-card">
-          <div class="metal-image">
-            <img
-              src="/sapporo-metal/assets/14-Dsh15Nex.jpeg"
+              src="/sapporo-metal/assets/metal-15-ieBxlry8.jpg"
               alt="エアコンラジエーター"
               width="1360"
               height="550"
+              loading="lazy"
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">エアコン<br class="SP" />ラジエーター</div>
+            <div class="metal-name">エアコンラジエーター</div>
             <div class="metal-price">650円<span>/kg</span></div>
-            <div class="metal-note">鉄付き / 630円</div>
+            <div class="metal-description">鉄付き: 630円</div>
           </div>
-        </div>
+        </li>
 
-        <div class="metal-card">
-          <div class="metal-image">
+        <li class="metal-item">
+          <div class="metal-img">
             <img
-              src="/sapporo-metal/assets/15-CUf0mYic.jpeg"
+              src="/sapporo-metal/assets/metal-16-CAkum4lT.jpg"
               alt="給電線"
               width="1360"
               height="550"
+              loading="lazy"
             />
           </div>
           <div class="metal-details">
             <div class="metal-name">給電線</div>
             <div class="metal-price">550円<span>/kg</span></div>
-            <div class="metal-note">説明文</div>
+            <div class="metal-description"></div>
           </div>
-        </div>
+        </li>
 
-        <div class="metal-card">
-          <div class="metal-image">
+        <li class="metal-item">
+          <div class="metal-img">
             <img
-              src="/sapporo-metal/assets/16-CZuEQaDO.jpeg"
+              src="/sapporo-metal/assets/metal-17-CXWUsdBZ.jpg"
               alt="自動車触媒"
               width="1360"
               height="550"
@@ -395,25 +389,20 @@
           </div>
           <div class="metal-details">
             <div class="metal-name">自動車触媒</div>
-            <div class="metal-price">
-              小 3,000円<br class="SP" />
-              中 4,000円
-            </div>
-            <div class="metal-note">
-              触媒<br />
-              小 / 2,000円 中 / 3,000円 <br />
-              大 / 要検品 特大 / 要検品<br />
-              灯油送油管 700円<br />
-              ボイラーステンレス釜 30円 <br />
-              ステンレス 120円
+            <div class="metal-price sm">小3,000円/中4,000円</div>
+            <div class="metal-description">
+              触媒:要相談 特価買取対象<br />
+              <!-- 灯油送油管: 700円<br />
+              ボイラーステンレス釜: 30円 <br />
+              ステンレス: 120円 -->
             </div>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
     </main>
 
     <footer>
-      <div class="footer-container">
+      <div class="footer-inner">
         <div class="footer-content">
           <div class="footer-section">
             <h3>会社情報</h3>
