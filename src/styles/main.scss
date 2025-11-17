@@ -196,7 +196,7 @@ header {
 
 // Main Content
 main {
-  padding: 1.2rem;
+  padding: 2rem 1.2rem;
 }
 
 .section-title {
@@ -300,68 +300,40 @@ footer {
   background-color: #555;
   color: white;
   padding: min_vw_pc(40) min_vw_pc(20);
-  margin-top: min_vw_pc(60);
-
-  @include mq(max, md) {
-    padding: vw_sp(30) vw_sp(10);
-    margin-top: vw_sp(40);
-  }
 }
 
 .footer-inner {
-  max-width: min_vw_pc(1200);
+  max-width: min_vw_pc(1440);
   margin: 0 auto;
 }
 
-.footer-content {
+.footer-body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min_vw_pc(250), 1fr));
   gap: min_vw_pc(40);
   margin-bottom: min_vw_pc(30);
-
-  @include mq(max, md) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: vw_sp(15) vw_sp(10);
-    margin-bottom: vw_sp(20);
-  }
 }
 
-.footer-section {
-  h3 {
-    margin-bottom: min_vw_pc(15);
-    font-size: min_vw_pc(16);
-    color: #ccc;
-
-    @include mq(max, md) {
-      font-size: vw_sp(13);
-      margin-bottom: vw_sp(8);
-    }
-  }
-
+.footer-item {
   p {
-    font-size: min_vw_pc(18);
-    line-height: 1.8;
+    font-size: min_vw_pc(16);
+    line-height: 1.2;
     color: #ddd;
 
     strong {
-      font-size: min_vw_pc(30);
-    }
-
-    @include mq(max, md) {
-      font-size: vw_sp(11);
-      line-height: 1.6;
-
-      strong {
-        font-size: vw_sp(16);
+      font-size: min_vw_pc(24);
+      line-height: 1;
+      span {
+        font-size: min_vw_pc(16);
       }
     }
   }
+}
 
-  &:nth-child(3) {
-    @include mq(max, md) {
-      grid-column: 1 / -1;
-    }
-  }
+.footer-label {
+  margin-bottom: min_vw_pc(15);
+  font-size: min_vw_pc(20);
+  color: #ccc;
 }
 
 .footer-divider {
@@ -385,6 +357,9 @@ footer {
   }
   .company-name {
     font-size: vw_sp(26);
+    span {
+      font-size: vw_sp(13);
+    }
   }
   .contact {
     font-size: vw_sp(18);
@@ -402,7 +377,7 @@ footer {
   }
   .phone {
     font-size: vw_sp(16);
-    padding: vw_sp(5) vw_sp(8);
+    padding: vw_sp(4) vw_sp(8);
     gap: vw_sp(4);
   }
   .header-inner {
@@ -434,12 +409,12 @@ footer {
     a {
       flex: 1;
       text-align: center;
-      padding: vw_sp(8) vw_sp(12);
+      padding: vw_sp(4) vw_sp(6);
       font-size: vw_sp(12);
     }
   }
   main {
-    padding: 0.5rem;
+    padding: 1rem 0.6rem;
   }
   .section-title {
     font-size: vw_sp(24);
@@ -485,6 +460,40 @@ footer {
   .announcement {
     padding: min_vw_pc(12) min_vw_pc(20);
     font-size: min_vw_pc(20);
+  }
+}
+
+@include mq(max, md) {
+  footer {
+    padding: vw_sp(30) vw_sp(10);
+  }
+  .footer-body {
+    grid-template-columns: repeat(2, 1fr);
+    gap: vw_sp(10) vw_sp(10);
+    margin-bottom: vw_sp(20);
+  }
+  .footer-item {
+    p {
+      font-size: vw_sp(13);
+      line-height: 1.2;
+
+      strong {
+        font-size: vw_sp(20);
+        line-height: 1;
+        span {
+          font-size: vw_sp(12);
+        }
+      }
+    }
+    &:nth-child(3) {
+      @include mq(max, md) {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+  .footer-label {
+    font-size: vw_sp(16);
+    margin-bottom: vw_sp(8);
   }
 }
 
