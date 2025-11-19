@@ -219,7 +219,7 @@ main {
 
 .metals-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min_vw_pc(430), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min_vw_pc(400), 1fr));
   gap: 1rem;
 }
 
@@ -229,13 +229,13 @@ main {
   box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  height: min_vw_pc(430);
+  height: min_vw_pc(450);
   overflow: hidden;
 }
 
 .metal-img {
   width: 100%;
-  height: min_vw_pc(220);
+  // height: min_vw_pc(220);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -263,7 +263,7 @@ main {
 }
 
 .metal-price {
-  font-size: vw_sp(10);
+  font-size: min_vw_pc(40);
   color: #e74c3c;
   font-weight: bold;
   margin-bottom: min_vw_pc(6);
