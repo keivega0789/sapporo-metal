@@ -328,6 +328,13 @@ footer {
       }
     }
   }
+  &:nth-child(3) {
+    p {
+      span {
+        font-size: min_vw_pc(16);
+      }
+    }
+  }
 }
 
 .footer-label {
@@ -336,23 +343,16 @@ footer {
   color: #ccc;
 }
 
-.footer-divider {
+.footer-copyRight {
   border-top: 1px solid #666;
   padding-top: min_vw_pc(20);
   text-align: center;
   color: #999;
   font-size: min_vw_pc(13);
-
-  @include mq(max, md) {
-    padding-top: vw_sp(15);
-    font-size: vw_sp(10);
-  }
 }
 
 @include mq(max, sm) {
   .announcement {
-    // font-size: vw_sp(12);
-    // padding: vw_sp(10) vw_sp(15);
     display: none;
   }
   .company-name {
@@ -420,10 +420,6 @@ footer {
     font-size: vw_sp(24);
     margin-bottom: 0.5rem;
   }
-  .metals-list {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-  }
   .metal-item {
     height: vw_sp(230);
   }
@@ -435,13 +431,10 @@ footer {
   }
   .metal-name {
     font-size: vw_sp(16);
-    // line-height: 1;
-    // min-height: vw_sp(32);
   }
   .metal-price {
     min-height: vw_sp(36);
     font-size: vw_sp(28);
-    // line-height: 1.3;
     span {
       font-size: vw_sp(16);
     }
@@ -454,23 +447,8 @@ footer {
     font-size: vw_sp(14);
     line-height: 1.3;
   }
-}
-
-@include mq(min, sm) {
-  .announcement {
-    padding: min_vw_pc(12) min_vw_pc(20);
-    font-size: min_vw_pc(20);
-  }
-}
-
-@include mq(max, md) {
   footer {
     padding: vw_sp(30) vw_sp(10);
-  }
-  .footer-body {
-    grid-template-columns: repeat(2, 1fr);
-    gap: vw_sp(10) vw_sp(10);
-    margin-bottom: vw_sp(20);
   }
   .footer-item {
     p {
@@ -486,6 +464,11 @@ footer {
       }
     }
     &:nth-child(3) {
+      p {
+        span {
+          font-size: vw_sp(13);
+        }
+      }
       @include mq(max, md) {
         grid-column: 1 / -1;
       }
@@ -494,6 +477,98 @@ footer {
   .footer-label {
     font-size: vw_sp(16);
     margin-bottom: vw_sp(8);
+  }
+  .footer-copyRight {
+    padding-top: vw_sp(15);
+    font-size: vw_sp(10);
+  }
+}
+
+@include mq(min, sm) {
+  .announcement {
+    padding: min_vw_pc(12) min_vw_pc(20);
+    font-size: min_vw_pc(20);
+  }
+}
+
+@include mq(min-max, sm, md) {
+  main {
+    padding: 1.2rem 1rem;
+  }
+  .metal-item {
+    height: vw_sp(170);
+  }
+  .metal-img {
+    height: vw_sp(80);
+  }
+  .metal-details {
+    padding: vw_sp(8);
+  }
+  .metal-name {
+    font-size: vw_sp(16);
+  }
+  .metal-price {
+    min-height: vw_sp(30);
+    font-size: vw_sp(15);
+
+    span {
+      font-size: vw_sp(14);
+    }
+  }
+  .metal-description {
+    font-size: vw_sp(9);
+    line-height: 1.3;
+  }
+  .footer-item {
+    p {
+      font-size: vw_sp(10);
+      line-height: 1.2;
+
+      strong {
+        font-size: vw_sp(14);
+        line-height: 1;
+        span {
+          font-size: vw_sp(9);
+        }
+      }
+    }
+    &:nth-child(3) {
+      p {
+        span {
+          font-size: vw_sp(10);
+        }
+      }
+      @include mq(max, md) {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+  .footer-label {
+    font-size: vw_sp(12);
+    margin-bottom: vw_sp(8);
+  }
+  .footer-copyRight {
+    padding-top: vw_sp(15);
+    font-size: vw_sp(8);
+  }
+}
+
+@include mq(max, md) {
+  .metals-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .footer-body {
+    grid-template-columns: repeat(2, 1fr);
+    gap: vw_sp(10) vw_sp(10);
+    margin-bottom: vw_sp(20);
+  }
+  .footer-item {
+    p {
+      &:nth-child(3) {
+        grid-column: 1 / -1;
+      }
+    }
   }
 }
 
@@ -506,7 +581,7 @@ footer {
   .special-hours {
     font-size: min_vw_pc(16);
   }
-  .metal-price {
-    font-size: min_vw_pc(36);
-  }
+  // .metal-price {
+  //   font-size: min_vw_pc(36);
+  // }
 }
