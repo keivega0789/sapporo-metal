@@ -604,8 +604,10 @@ footer {
 .company-info-detail-label {
   padding: 1rem;
   font-size: min_vw_pc(18);
+  text-align: left;
 }
 .company-info-detail-value {
+  padding: 0.5rem;
   font-size: min_vw_pc(16);
 }
 .message {
@@ -623,6 +625,31 @@ footer {
 
 //sm以下すべて
 @include mq(max, sm) {
+  .company-info-detail {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .company-info-detail-label {
+    padding: 0.5rem 1rem;
+    font-size: vw_sp(15);
+    white-space: nowrap;
+  }
+  .company-info-detail-value {
+    font-size: vw_sp(14);
+    white-space: nowrap;
+  }
+  .access-map iframe {
+    height: 18rem;
+  }
+  .access-map-link {
+    font-size: vw_sp(14);
+  }
+  .message-heading {
+    font-size: vw_sp(16);
+  }
+  .message-body {
+    font-size: vw_sp(14);
+  }
 }
 
 //sm以上すべて
@@ -631,6 +658,19 @@ footer {
 
 //sm以上md以下
 @include mq(min-max, sm, md) {
+  .company-info-detail-label {
+    padding: 0.5rem 1rem;
+    font-size: vw_sp(10);
+  }
+  .company-info-detail-value {
+    font-size: vw_sp(8);
+  }
+  .message-heading {
+    font-size: vw_sp(10);
+  }
+  .message-body {
+    font-size: vw_sp(8);
+  }
 }
 
 //md以下すべて
