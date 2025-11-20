@@ -200,7 +200,7 @@ main {
 }
 
 .section-title {
-  font-size: min_vw_pc(40);
+  font-size: min_vw_pc(36);
   text-align: center;
   margin-bottom: 1rem;
   font-weight: bold;
@@ -584,4 +584,71 @@ footer {
   // .metal-price {
   //   font-size: min_vw_pc(36);
   // }
+}
+
+// company
+.company-info-inner {
+  justify-self: center;
+  margin-bottom: 2rem;
+}
+.company-info-detail {
+  justify-self: center;
+  width: min_vw_pc(1000);
+  margin-bottom: 2rem;
+  border-collapse: collapse;
+  tr {
+    border-bottom: solid 1px #ddd;
+  }
+}
+
+.company-info-detail-label {
+  padding: 1rem;
+  font-size: min_vw_pc(18);
+}
+.company-info-detail-value {
+  font-size: min_vw_pc(16);
+}
+.message {
+  max-width: min_vw_pc(1000);
+  justify-self: center;
+}
+.message-heading {
+  font-size: min_vw_pc(24);
+  margin-bottom: 0.5rem;
+}
+.message-body {
+  font-size: min_vw_pc(18);
+  line-height: 1.8;
+}
+
+//sm以下すべて
+@include mq(max, sm) {
+}
+
+//sm以上すべて
+@include mq(min, sm) {
+}
+
+//sm以上md以下
+@include mq(min-max, sm, md) {
+}
+
+//md以下すべて
+@include mq(max, md) {
+}
+
+//md以上すべて
+@include mq(min, md) {
+}
+
+//md以上lg以下
+@include mq(min-max, md, lg) {
+}
+
+//lg以下すべて
+@include mq(max, lg) {
+}
+
+//lg以上すべて
+@include mq(min, lg) {
 }
