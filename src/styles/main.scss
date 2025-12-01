@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 // Body
 body {
   font-family: Futura, "Noto Sans JP", "Helvetica Neue", Arial,
@@ -440,7 +444,7 @@ footer {
     }
     &.sm {
       font-size: vw_sp(16);
-      line-height: 2;
+      line-height: 1.5;
     }
   }
   .metal-description {
