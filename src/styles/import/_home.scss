@@ -1,0 +1,131 @@
+@use "variable" as *;
+@use "mixin" as *;
+
+.metals-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min_vw_pc(400), 1fr));
+  gap: 1rem;
+}
+
+.metal-item {
+  background: white;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: min_vw_pc(450);
+  overflow: hidden;
+}
+
+.metal-img {
+  width: 100%;
+  // height: min_vw_pc(220);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1360 / 550;
+  }
+}
+
+.metal-details {
+  padding: min_vw_pc(20);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.metal-name {
+  font-size: min_vw_pc(32);
+  font-weight: bold;
+  color: #555;
+  line-height: 1;
+}
+
+.metal-price {
+  font-size: min_vw_pc(40);
+  color: #e74c3c;
+  font-weight: bold;
+  margin-bottom: min_vw_pc(6);
+  line-height: 1.3;
+
+  span {
+    font-size: min_vw_pc(20);
+    color: #555;
+  }
+}
+
+.metal-description {
+  font-size: min_vw_pc(18);
+  color: #666;
+  line-height: 1.6;
+  flex: 1;
+}
+
+@include mq(max, sm) {
+  .metal-item {
+    height: vw_sp(230);
+  }
+  .metal-img {
+    height: vw_sp(100);
+  }
+  .metal-details {
+    padding: vw_sp(5);
+  }
+  .metal-name {
+    font-size: vw_sp(16);
+  }
+  .metal-price {
+    min-height: vw_sp(36);
+    font-size: vw_sp(28);
+    span {
+      font-size: vw_sp(16);
+    }
+    &.sm {
+      font-size: vw_sp(16);
+      line-height: 1.5;
+    }
+  }
+  .metal-description {
+    font-size: vw_sp(14);
+    line-height: 1.3;
+  }
+}
+
+@include mq(min-max, sm, md) {
+  .metal-item {
+    height: vw_sp(170);
+  }
+  .metal-img {
+    height: vw_sp(80);
+  }
+  .metal-details {
+    padding: vw_sp(8);
+  }
+  .metal-name {
+    font-size: vw_sp(16);
+  }
+  .metal-price {
+    min-height: vw_sp(30);
+    font-size: vw_sp(15);
+
+    span {
+      font-size: vw_sp(14);
+    }
+  }
+  .metal-description {
+    font-size: vw_sp(9);
+    line-height: 1.3;
+  }
+}
+
+@include mq(max, md) {
+  .metals-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+}
