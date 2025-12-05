@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <!-- 旧サイトからのメタタグ情報を持ってくる -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -14,7 +13,7 @@
     <title>札幌金属興業 | 銅・真鍮・砲金・電線・触媒買取</title>
     <meta
       name="description"
-      content="「札幌金属興業」はピカ銅線:1500円、下銅・込銅:1500円、電線80%:1200円から買い取ります。平日16時30分、土曜日は午前中まで営業、日曜日、祝日は定休日です。"
+      content="「札幌金属興業」はピカ銅線、下銅・込銅、電線80%などを高価で買い取ります。平日16時30分、土曜日は午前中まで営業、日曜日、祝日は定休日です。"
     />
 
     <!-- OGP設定 -->
@@ -27,9 +26,13 @@
     />
     <meta
       property="og:description"
-      content="「札幌金属興業」はピカ銅線:1500円、下銅・込銅:1500円、電線80%:1200円から買い取ります。平日16時30分、土曜日は午前中まで営業、日曜日、祝日は定休日です。"
+      content="「札幌金属興業」はピカ銅線、下銅・込銅、電線80%などを高価で買い取ります。平日16時30分、土曜日は午前中まで営業、日曜日、祝日は定休日です。"
     />
-    <!-- <meta property="og:image" content="" /> -->
+    <!-- <meta property="og:image" content="" /> TODO:あとで追加 -->
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="札幌金属興業" />
+    <!-- ========== Twitter Card設定 ========== -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="http://www.sapporohitetsu.com/" />
     <meta
@@ -38,12 +41,78 @@
     />
     <meta
       name="twitter:description"
-      content="「札幌金属興業」はピカ銅線:1500円、下銅・込銅:1500円、電線80%:1200円から買い取ります。平日16時30分、土曜日は午前中まで営業、日曜日、祝日は定休日です。"
+      content="「札幌金属興業」はピカ銅線、下銅・込銅、電線80%などを高価で買い取ります。平日16時30分、土曜日は午前中まで営業、日曜日、祝日は定休日です。"
     />
-    <!-- <meta name="twitter:image" content="" /> -->
+    <!-- <meta name="twitter:image" content="" /> TODO:あとで追加 -->
 
     <!-- NOTE:公開時はnoindex消す -->
     <meta name="robots" content="noindex" />
+
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "札幌金属興業",
+        "image": "http://www.sapporohitetsu.com/images/og-image.jpg",
+        "description": "札幌市東区で非鉄金属の高価買取を行うリサイクル業者。ピカ銅線、真鍮、砲金、電線、触媒など幅広く買取。",
+        "url": "http://www.sapporohitetsu.com/",
+        "telephone": "+81-80-6073-5065",
+        "faxNumber": "+81-11-781-6501",
+        "priceRange": "¥¥",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "北35条東20丁目1",
+          "addressLocality": "札幌市東区",
+          "addressRegion": "北海道",
+          "postalCode": "007-0835",
+          "addressCountry": "JP"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 43.106275,
+          "longitude": 141.375966
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:30",
+            "closes": "16:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:30",
+            "closes": "12:00"
+          }
+        ],
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 43.106275,
+            "longitude": 141.375966
+          },
+          "geoRadius": "50000"
+        },
+        "serviceType": [
+          "非鉄金属買取",
+          "銅買取",
+          "真鍮買取",
+          "砲金買取",
+          "電線買取",
+          "触媒買取",
+          "金属リサイクル"
+        ]
+      }
+    </script>
   </head>
   <body>
     <header>
@@ -77,7 +146,7 @@
           <div class="hours">
             <div class="contact"><strong>営業時間:</strong> 9:30～16:30</div>
             <div class="special-hours">
-              🎉 11月の日曜営業日<br />
+              🎉 12月の日曜営業日<br />
               x日・x日・x日・x日・x日
             </div>
           </div>
