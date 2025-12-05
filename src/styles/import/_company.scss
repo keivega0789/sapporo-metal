@@ -39,6 +39,10 @@
   line-height: 1.8;
 }
 
+.access {
+  justify-self: center;
+}
+
 //sm以下すべて
 @include mq(max, sm) {
   .company-info-inner {
@@ -70,6 +74,9 @@
 
 //sm以上すべて
 @include mq(min, sm) {
+  .access-map {
+    width: min_vw_pc(1000);
+  }
 }
 
 //sm以上md以下
