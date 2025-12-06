@@ -1,12 +1,125 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <!-- 旧サイトからのメタタグ情報を持ってくる -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>札幌金属興業 - 非鉄金属買取</title>
-    <script type="module" crossorigin src="/sapporo-metal/assets/index-oTNSyZRu.js"></script>
-    <link rel="stylesheet" crossorigin href="/sapporo-metal/assets/index-a_wRFA29.css">
+
+    <!-- NOTE: keywordは本当に役立つのか？ -->
+    <meta
+      name="keywords"
+      content="札幌,金属,買取,石狩,小樽,江別,北広島,恵庭,当別,北海道,手稲,新川,新琴似,発寒,屯田,麻布,あいの里,拓北,篠路,宮の沢,福井,伏古,本町,菊水,東札幌,豊平,平岸,澄川,西岡,北野,清田,平岡,月寒,南郷,北郷,真駒内,厚別,上野幌"
+    />
+    <!-- <link rel="canonical" href="" /> -->
+    <title>札幌金属興業 | 銅・真鍮・砲金・電線・触媒買取</title>
+    <meta
+      name="description"
+      content="「札幌金属興業」はピカ銅線、下銅・込銅、電線80%などを高価で買い取ります。平日16時30分、土曜日は午前中まで営業、日曜日、祝日は定休日です。"
+    />
+
+    <!-- OGP設定 -->
+    <meta property="og:site_name" content="札幌金属興業" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.sapporohitetsu.com/" />
+    <meta
+      property="og:title"
+      content="札幌金属興業 | 銅・真鍮・砲金・電線・触媒買取"
+    />
+    <meta
+      property="og:description"
+      content="「札幌金属興業」はピカ銅線、下銅・込銅、電線80%などを高価で買い取ります。平日16時30分、土曜日は午前中まで営業、日曜日、祝日は定休日です。"
+    />
+
+    <!-- 本番デプロイ前に絶対パスを追加 -->
+    <!-- <meta property="og:image" content="" /> -->
+
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="札幌金属興業" />
+    <!-- ========== Twitter Card設定 ========== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://www.sapporohitetsu.com/" />
+    <meta
+      name="twitter:title"
+      content="札幌金属興業 | 銅・真鍮・砲金・電線・触媒買取"
+    />
+    <meta
+      name="twitter:description"
+      content="「札幌金属興業」はピカ銅線、下銅・込銅、電線80%などを高価で買い取ります。平日16時30分、土曜日は午前中まで営業、日曜日、祝日は定休日です。"
+    />
+
+    <!-- 本番デプロイ前に絶対パスを追加 -->
+    <!-- <meta name="twitter:image" content="" /> -->
+
+    <!-- NOTE:公開時はnoindex消す -->
+    <meta name="robots" content="noindex" />
+
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "札幌金属興業",
+        "image": "http://www.sapporohitetsu.com/images/og-image.jpg",
+        "description": "札幌市東区で非鉄金属の高価買取を行うリサイクル業者。ピカ銅線、真鍮、砲金、電線、触媒など幅広く買取。",
+        "url": "http://www.sapporohitetsu.com/",
+        "telephone": "+81-80-6073-5065",
+        "faxNumber": "+81-11-781-6501",
+        "priceRange": "¥¥",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "北35条東20丁目1",
+          "addressLocality": "札幌市東区",
+          "addressRegion": "北海道",
+          "postalCode": "007-0835",
+          "addressCountry": "JP"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 43.106275,
+          "longitude": 141.375966
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "09:30",
+            "closes": "16:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:30",
+            "closes": "12:00"
+          }
+        ],
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": 43.106275,
+            "longitude": 141.375966
+          },
+          "geoRadius": "50000"
+        },
+        "serviceType": [
+          "非鉄金属買取",
+          "銅買取",
+          "真鍮買取",
+          "砲金買取",
+          "電線買取",
+          "触媒買取",
+          "金属リサイクル"
+        ]
+      }
+    </script>
+    <script type="module" crossorigin src="/sapporo-metal/assets/main-CC26tFY9.js"></script>
+    <link rel="stylesheet" crossorigin href="/sapporo-metal/assets/main-D9KCRwGO.css">
   </head>
   <body>
     <header>
@@ -27,7 +140,12 @@
       <div class="header-inner">
         <div class="company-info">
           <div class="company-contact">
-            <h1 class="company-name">札幌金属興業</h1>
+            <!--TODO: aタグのtext-decoration -->
+            <a href="/">
+              <h1 class="company-name">
+                札幌金属興業<span>非鉄金属高価買取</span>
+              </h1>
+            </a>
             <div class="phone">
               ☎ <a href="tel:080-6073-5065">080-6073-5065</a>
             </div>
@@ -35,13 +153,13 @@
           <div class="hours">
             <div class="contact"><strong>営業時間:</strong> 9:30～16:30</div>
             <div class="special-hours">
-              🎉 11月の日曜営業日<br />
+              🎉 12月の日曜営業日<br />
               x日・x日・x日・x日・x日
             </div>
           </div>
         </div>
         <div class="header-links">
-          <a href="/" class="company-link">会社概要</a>
+          <a href="/company.html" class="company-link">会社概要</a>
           <!--TODO: target="_blank"いれる -->
           <a href="/" class="line-link">LINE相談</a>
         </div>
@@ -49,7 +167,7 @@
     </header>
 
     <main>
-      <h2 class="section-title">買取品目一覧</h2>
+      <h2 class="section-title visually-hidden">買取品目一覧</h2>
       <ul class="metals-list">
         <li class="metal-item">
           <div class="metal-img">
@@ -62,7 +180,7 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">ピカ銅線</div>
+            <h3 class="metal-name">ピカ銅線</h3>
             <div class="metal-price">1,500円<span>/kg</span></div>
             <div class="metal-description">
               <p>
@@ -84,10 +202,11 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">被覆線(銅率80%程度)</div>
+            <h3 class="metal-name">被覆線(銅率80%程度)</h3>
             <div class="metal-price">240円<span>/kg</span></div>
             <div class="metal-description">
-              銅率80%程度/<br class="visible-sp" />内部の銅線が1.3mm以上
+              銅率80%程度/<br class="visible-sp" />
+              内部の銅線が1.3mm以上<br class="visible-pc" />
               CVT・IV60m,100m,150m<br />
               <!-- ◎端子、ジョイント等の不純物が付いていると減額の対象となります。 -->
             </div>
@@ -105,7 +224,7 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">並銅</div>
+            <h3 class="metal-name">並銅</h3>
             <div class="metal-price">1,450円<span>/kg</span></div>
             <div class="metal-description">新品同様</div>
           </div>
@@ -122,7 +241,7 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">込銅・下銅</div>
+            <h3 class="metal-name">込銅・下銅</h3>
             <div class="metal-price">1,430円<span>/kg</span></div>
             <div class="metal-description">
               サビ,溶接,劣化OK<br />
@@ -142,7 +261,7 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">砲金・メッキ砲金</div>
+            <h3 class="metal-name">砲金・メッキ砲金</h3>
             <div class="metal-price">1,260円<span>/kg</span></div>
             <div class="metal-description">
               真鍮が付いていると<br class="visible-sp" />真鍮扱いとなります
@@ -161,7 +280,7 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">込真鍮</div>
+            <h3 class="metal-name">込真鍮</h3>
             <div class="metal-price">900円<span>/kg</span></div>
             <div class="metal-description">
               ゴム,パッキン,シール<br class="visible-sp" />付着⚪︎
@@ -180,7 +299,7 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">真鍮（未処理）</div>
+            <h3 class="metal-name">真鍮（未処理）</h3>
             <div class="metal-price">800円<span>/kg</span></div>
             <div class="metal-description">
               プラスチック付⚪︎<br />
@@ -200,7 +319,7 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">真鍮（付着物無）</div>
+            <h3 class="metal-name">真鍮（付着物無）</h3>
             <div class="metal-price">920円<span>/kg</span></div>
             <div class="metal-description"></div>
           </div>
@@ -217,7 +336,7 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">真鍮メダル</div>
+            <h3 class="metal-name">真鍮メダル</h3>
             <div class="metal-price">880円<span>/kg</span></div>
             <div class="metal-description">
               無垢 / 900円<br />
@@ -226,24 +345,6 @@
             </div>
           </div>
         </li>
-
-        <!-- <li class="metal-item">
-          <div class="metal-img">
-            <img
-              src="src/images/22.jpeg"
-              alt="真鍮粉・砲金粉"
-              width="1360"
-              height="550"
-            />
-          </div>
-          <div class="metal-details">
-            <div class="metal-name">真鍮粉・砲金粉</div>
-            <div class="metal-price">時価</div>
-            <div class="metal-description">
-              青銅・リン青銅・アルミ青銅さらにはニッケル等も買取対応いたします。
-            </div>
-          </div>
-        </li> -->
 
         <li class="metal-item">
           <div class="metal-img">
@@ -256,7 +357,7 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">ボイラー（銅釜）</div>
+            <h3 class="metal-name">ボイラー（銅釜）</h3>
             <div class="metal-price">240円<span>/kg</span></div>
             <div class="metal-description">
               銅の釜が付いているもの。<br class="visible-sp" />
@@ -276,7 +377,7 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">銅釜</div>
+            <h3 class="metal-name">銅釜</h3>
             <div class="metal-price">1,300円<span>/kg</span></div>
             <div class="metal-description"></div>
           </div>
@@ -293,7 +394,7 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">VVFケーブル</div>
+            <h3 class="metal-name">VVFケーブル</h3>
             <div class="metal-price">580円<span>/kg</span></div>
             <div class="metal-description">
               銅率40%程度<br />
@@ -313,7 +414,7 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">工業廃線</div>
+            <h3 class="metal-name">工業廃線</h3>
             <div class="metal-price">470円<span>/kg</span></div>
             <div class="metal-description">
               銅率40%以下 <br />
@@ -334,11 +435,11 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">銅割合電線</div>
+            <h3 class="metal-name">銅割合電線</h3>
             <div class="metal-price sm">240円〜1,120円<span>/kg</span></div>
             <div class="metal-description">
-              銅率60%のもの: 800円<br />
-              CV,三芯,工業廃電線: 480円<br />
+              銅率60%のもの:800円<br />
+              CV,三芯,工業廃電線:480円<br />
               3.5mm, 1.25mm,左記以下
             </div>
           </div>
@@ -355,7 +456,7 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">エアコンラジエーター</div>
+            <h3 class="metal-name">エアコンラジエーター</h3>
             <div class="metal-price">650円<span>/kg</span></div>
             <div class="metal-description">鉄付き: 630円</div>
           </div>
@@ -372,7 +473,7 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">給電線</div>
+            <h3 class="metal-name">給電線</h3>
             <div class="metal-price">550円<span>/kg</span></div>
             <div class="metal-description"></div>
           </div>
@@ -388,8 +489,8 @@
             />
           </div>
           <div class="metal-details">
-            <div class="metal-name">自動車触媒</div>
-            <div class="metal-price sm">小3,000円/中4,000円</div>
+            <h3 class="metal-name">自動車触媒</h3>
+            <div class="metal-price sm">小3,000円/<br />中4,000円</div>
             <div class="metal-description">
               触媒:要相談 特価買取対象<br />
               <!-- 灯油送油管: 700円<br />
@@ -403,19 +504,22 @@
 
     <footer>
       <div class="footer-inner">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>会社情報</h3>
+        <div class="footer-body">
+          <div class="footer-item">
+            <h3 class="footer-label">会社情報</h3>
             <p>
-              <strong>札幌金属興業</strong><br />
-              非鉄金属高価買取<br />
+              <strong>
+                札幌金属興業<br />
+                <span>非鉄金属高価買取</span>
+              </strong>
+              <br />
               <br />
               経験豊富なスタッフが<br />
               適切に査定いたします。
             </p>
           </div>
-          <div class="footer-section">
-            <h3>所在地</h3>
+          <div class="footer-item">
+            <h3 class="footer-label">所在地</h3>
             <p>
               〒007-0835<br />
               札幌市東区北35条東20丁目1<br />
@@ -424,19 +528,17 @@
               📱 LINE相談受付中
             </p>
           </div>
-          <div class="footer-section">
-            <h3>営業時間</h3>
+          <div class="footer-item">
+            <h3 class="footer-label">営業時間</h3>
             <p>
               9:30～16:30<br />
+              <span>土曜日午前中まで・日曜・祝日定休</span><br />
               <br />
-              （土曜日午前中まで・日曜・祝日定休）<br />
-              <br />
-              ご不明な点はお気軽に<br />
-              お問い合わせください。
+              ご不明な点はお気軽に<br />お問い合わせください。
             </p>
           </div>
         </div>
-        <div class="footer-divider">
+        <div class="footer-copyRight">
           © 2025 札幌金属興業. All Rights Reserved.
         </div>
       </div>
