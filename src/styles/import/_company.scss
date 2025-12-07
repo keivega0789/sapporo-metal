@@ -37,6 +37,7 @@
 .message-body {
   font-size: min_vw_pc(18);
   line-height: 1.8;
+  margin-bottom: 3rem;
 }
 
 .access {
@@ -45,8 +46,6 @@
 
 //sm以下すべて
 @include mq(max, sm) {
-  .company-info-inner {
-  }
   .company-info-detail {
     margin-bottom: 1rem;
     width: 100%;
@@ -54,15 +53,22 @@
   .company-info-detail-label {
     padding: 0.5rem 1rem;
     font-size: vw_sp(15);
+    white-space: nowrap;
   }
   .company-info-detail-value {
     font-size: vw_sp(14);
+  }
+  .access {
+    padding-inline: 0.5rem;
   }
   .access-map iframe {
     height: 18rem;
   }
   .access-map-link {
     font-size: vw_sp(14);
+  }
+  .message {
+    padding-inline: 0.5rem;
   }
   .message-heading {
     font-size: vw_sp(16);
