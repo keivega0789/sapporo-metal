@@ -171,6 +171,11 @@ header {
   }
 }
 
+main {
+  padding-block: var(--block-spacing);
+  padding-inline: var(--inline-spacing);
+}
+
 @include mq(max, sm) {
   .announcement {
     display: none;
@@ -235,6 +240,12 @@ header {
   .announcement {
     padding: min_vw_pc(12) min_vw_pc(20);
     font-size: min_vw_pc(20);
+  }
+}
+
+@include mq(min-max, sm, md) {
+  main {
+    padding: 1.2rem 1rem;
   }
 }
 

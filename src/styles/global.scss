@@ -14,44 +14,188 @@
   }
 
   :where(:root) {
+    --font-family-futura-noto:
+      Futura, 'Noto Sans JP', 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
     --color-black-01: #333;
+    --color-black-02: #555;
+    --color-black-03: #666;
+    --color-white-01: #fff;
+    --color-white-02: #e8e8e8;
+    --color-red-01: #e74c3c;
+    --color-yellow-01: #ffff00;
+    --color-green-01: #00b900;
     --font-size: 1.5rem;
     --font-weight: 400;
     --line-height: 1.6;
     --letter-spacing: 0.05em;
-    --inline-spacing: 1.5rem;
+    --block-spacing: 1rem;
+    --inline-spacing: 0.6rem;
     --window-size-lg: 1440;
     --window-size-md: 768;
     --window-size-sm: 375;
 
+    font-family: var(--font-family-futura-noto);
     font-size: 62.5%; //1rem=10px
     font-weight: var(--font-weight);
     line-height: var(--line-height);
     color: var(--color-black-01);
     text-align: start;
+    line-break: strict;
+    word-break: normal;
+    overflow-wrap: anywhere;
+    touch-action: manipulation;
+    scroll-padding-block-start: var(--scroll-padding-block-start);
+    text-size-adjust: 100%;
+    // -webkit-font-smoothing: antialiased;
+
+    @include mq(min, sm) {
+      --block-spacing: 2rem;
+      --inline-spacing: 1.5rem;
+    }
+  }
+
+  :where(body) {
+    min-block-size: 100svb;
+    font-size: var(--font-size);
+    // letter-spacing: var(--letter-spacing);
+    background-color: var(--color-white-02);
+    color: var(--color-black-01);
+  }
+
+  :where(h1, h2, h3, h4, h5) {
+    font-weight: 600;
+  }
+
+  :where(ul, ol) {
+    list-style: none outside none;
+  }
+
+  :where(:any-link) {
+    color: unset;
+    text-decoration-line: none;
+    text-decoration-thickness: from-font;
+    text-underline-offset: 0.25em;
+    background-color: unset;
+  }
+
+  :where(table) {
+    inline-size: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+
+  :where(td, th) {
+    vertical-align: top;
+    text-align: start;
+  }
+
+  :where(svg, video, canvas, audio, iframe, embed, object, picture) {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+  }
+
+  :where(img) {
+    max-inline-size: 100%;
+    block-size: auto;
+    vertical-align: middle;
+    color: transparent;
+  }
+
+  :where(iframe) {
+    aspect-ratio: 16/9;
+  }
+
+  :where(button, input, textarea),
+  ::file-selector-button {
+    font-family: unset;
+    font-feature-settings: 'palt' 1;
+    vertical-align: middle;
+    color: unset;
+    text-align: unset;
+    text-transform: unset;
+    letter-spacing: unset;
+    letter-spacing: 0;
+    background-color: unset;
+    border-color: transparent;
+    border-width: 0;
+    border-radius: unset;
+  }
+
+  :where(textarea) {
+    inline-size: 100%;
+    field-sizing: content;
+  }
+
+  :where(fieldset) {
+    padding: unset;
+    margin-inline: unset;
+  }
+
+  :where(legend) {
+    padding-inline: unset;
+  }
+
+  ::placeholder {
+    opacity: unset;
+  }
+
+  :where(button) {
+    font-size: 1em;
+    cursor: pointer;
+  }
+
+  :where(dialog) {
+    inline-size: unset;
+    max-inline-size: unset;
+    block-size: unset;
+    max-block-size: unset;
+    padding: unset;
+    overflow: unset;
+    color: unset;
+    background-color: unset;
+    border: unset;
+  }
+
+  :where(:root:has(dialog[open])) {
+    overflow: hidden;
+    scrollbar-gutter: stable;
+  }
+
+  :where([popover]) {
+    inline-size: unset;
+    block-size: unset;
+    padding: unset;
+    overflow: unset;
+    color: unset;
+    background-color: unset;
+    border: unset;
+  }
+
+  :where(:disabled) {
+    pointer-events: none;
+  }
+
+  :where(summary) {
+    display: block;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  :where(:focus-visible) {
+    outline: 3px solid #4c9aff;
   }
 }
 
-// Base Reset
-
-a {
-  text-decoration: none;
-}
-
-// Body
-body {
-  font-family:
-    Futura, 'Noto Sans JP', 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-  background-color: #e8e8e8;
-  color: #333;
-  min-height: 100vh;
-  margin: 0;
-}
-
-main {
-  padding-block: 2rem;
-  padding-inline: var(--inline-spacing);
-}
+// .focus-escape {
+//   position: absolute;
+//   inline-size: 1px;
+//   block-size: 1px;
+//   overflow: hidden;
+//   outline: none;
+// }
 
 .section-title {
   font-size: min_vw_pc(36);
@@ -61,17 +205,8 @@ main {
 }
 
 @include mq(max, sm) {
-  main {
-    padding: 1rem 0.6rem;
-  }
   .section-title {
     font-size: vw_sp(24);
     margin-bottom: 0.5rem;
-  }
-}
-
-@include mq(min-max, sm, md) {
-  main {
-    padding: 1.2rem 1rem;
   }
 }
