@@ -1,5 +1,5 @@
-@use "variable" as *;
-@use "mixin" as *;
+@use 'functions' as *;
+@use 'mixin' as *;
 
 header {
   position: sticky;
@@ -107,11 +107,6 @@ header {
   color: #ffff00;
   margin-top: 0;
   font-weight: bold;
-}
-
-//TODO: globalなクラス名
-.visible-sp {
-  display: none;
 }
 
 .phone {

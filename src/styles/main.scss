@@ -1,7 +1,8 @@
-@use "global";
-@use "./import/variable" as *;
-@use "./import/mixin" as *;
-@use "./import/header" as *;
-@use "./import/footer" as *;
-@use "./import/home" as *;
-@use "./import/company" as *;
+@use 'global';
+@use './import/utils' as *;
+@use './import/mixin' as *;
+@use './import/functions' as *;
+@use './import/header' as *;
+@use './import/footer' as *;
+@use './import/home' as *;
+@use './import/company' as *;

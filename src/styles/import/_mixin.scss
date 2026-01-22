@@ -1,6 +1,5 @@
-@use "sass:math";
-@use "sass:map";
-@use "variable" as var;
+@use 'sass:map';
+@use 'sass:list';
 
 /*
  * 行数制限
@@ -32,37 +31,13 @@
 }
 
 /*
- * 汎用計算用関数
+ * メディアクエリ
  */
-
-@function vw_pc($size) {
-  @return math.div($size, var.$width-pc) * 100vw;
-}
-
-@function vw_sp($size) {
-  @return math.div($size, var.$width-sp) * 100vw;
-}
-
-@function per($size, $base) {
-  @return math.div($size, $base) * 100%;
-}
-
-@function max_vw_pc($size) {
-  @return max($size * 1px, vw_pc($size * 0.9));
-}
-
-@function min_vw_pc($size, $rate: 1.25) {
-  @return min(vw_pc($size * $rate), $size * 1px);
-}
-
-/*
- * ブレイクポイントの初期設定
- */
-
 $breakpoints: (
-  "sm": 550,
-  "md": 768,
-  "lg": 1366,
+  sm: 640,
+  md: 768,
+  lg: 1024,
+  xl: 1280,
 ) !default;
 
 @function bp-value($bp) {
@@ -73,14 +48,14 @@ $breakpoints: (
   @return $bp;
 }
 
-@mixin mq($mq, $bp1: md, $bp2: lg) {
+@mixin mq($mq, $bp1: tablet, $bp2: desktop) {
   $w1: bp-value($bp1);
   $w2: bp-value($bp2);
 
-  $min1: "min-width: #{convert-em($w1, 1)}";
-  $min2: "min-width: #{convert-em($w1, 1)}";
-  $max1: "max-width: #{convert-em($w1)}";
-  $max2: "max-width: #{convert-em($w2)}";
+  $min1: 'width > #{convert-em($w1)}';
+  $min2: 'width > #{convert-em($w1)}';
+  $max1: 'width <= #{convert-em($w1)}';
+  $max2: 'width <= #{convert-em($w2)}';
 
   @if $mq == min {
     @media ($min1) {
@@ -104,10 +79,10 @@ $breakpoints: (
 /*
  * pxからemに変換
  */
-
 @function convert-em($width, $ge: 0) {
   $result: $width + $ge;
-  @return $result * 0.0625em;
+
+  @return '#{calc($result / 16)}em';
 }
 
 /*
@@ -150,7 +125,7 @@ $breakpoints: (
     width: 0;
     height: 0;
     margin-top: calc((1 - #{$line-height}) * 0.5em);
-    content: "";
+    content: '';
   }
 
   &::after {
@@ -158,6 +133,6 @@ $breakpoints: (
     width: 0;
     height: 0;
     margin-bottom: calc((1 - #{$line-height}) * 0.5em);
-    content: "";
+    content: '';
   }
 }

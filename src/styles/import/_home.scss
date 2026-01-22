@@ -1,5 +1,5 @@
-@use "variable" as *;
-@use "mixin" as *;
+@use 'functions' as *;
+@use 'mixin' as *;
 
 .metals-list {
   display: grid;
@@ -19,7 +19,6 @@
 
 .metal-img {
   width: 100%;
-  // height: min_vw_pc(220);
   display: flex;
   align-items: center;
   justify-content: center;

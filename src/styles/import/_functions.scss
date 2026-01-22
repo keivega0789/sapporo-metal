@@ -1,0 +1,51 @@
+@use 'sass:math';
+
+/*
+ * 汎用計算用関数
+ */
+@function vw_sp($size) {
+  @return calc(calc($size / var(--window-size-sm)) * 100vw);
+}
+
+@function vw_pc($size) {
+  @return calc(calc($size / var(--window-size-lg)) * 100vw);
+}
+
+@function per($size, $base) {
+  @return calc($size / $base) * 100%;
+}
+
+@function min_vw_pc($size) {
+  @return min(vw_pc($size), $size * 0.1rem);
+}
+
+@function max_vw_pc($size) {
+  @return max(vw_pc($size), $size * 0.1rem);
+}
+
+// 小数点付きの四捨五入割り算
+// round_div(10, 3, 2) => 3.33
+@function round_div($a, $b, $precision: 2) {
+  $base: math.pow(10, $precision);
+
+  @return calc(math.round(math.div($a, $b) * $base) / $base);
+}
+
+// clamp計算
+@function clamp_auto($min: null, $max, $vw-min: 375, $vw-max: 1440, $root: 10, $precision: 3) {
+  @if not $min {
+    $min: $max * 0.8;
+  }
+
+  // slope / intercept
+  $slope: calc(($max - $min) / ($vw-max - $vw-min));
+  $intercept: $max - $slope * $vw-max;
+
+  // unit convert
+  $min-rem: round_div($min, $root, $precision);
+  $max-rem: round_div($max, $root, $precision);
+  $intercept-rem: round_div($intercept, $root, $precision);
+  $slope-vw: round_div($slope * 100, 1, $precision);
+
+  @return clamp(#{$min-rem}rem, #{$intercept-rem}rem + #{$slope-vw}vw, #{$max-rem}rem);
+}

@@ -1,0 +1,32 @@
+@use 'functions' as *;
+@use 'mixin' as *;
+
+@layer utils {
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    white-space: nowrap;
+  }
+
+  .visible-sp {
+    display: none;
+    @include mq(max, sm) {
+      display: block;
+    }
+  }
+  .visible-pc {
+    display: block;
+    @include mq(max, sm) {
+      display: none;
+    }
+  }
+  .inline-spacing {
+    padding-inline: var(--inline-spacing);
+  }
+}
