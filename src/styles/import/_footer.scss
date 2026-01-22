@@ -2,8 +2,8 @@
 @use 'mixin' as *;
 
 footer {
-  background-color: #555;
-  color: white;
+  background-color: var(--color-black-02);
+  color: var(--color-white-01);
   padding: min_vw_pc(40) min_vw_pc(20);
 }
 
@@ -23,7 +23,7 @@ footer {
   p {
     font-size: min_vw_pc(16);
     line-height: 1.2;
-    color: #ddd;
+    color: var(--color-white-02);
 
     strong {
       font-size: min_vw_pc(24);
@@ -45,14 +45,14 @@ footer {
 .footer-label {
   margin-bottom: min_vw_pc(15);
   font-size: min_vw_pc(20);
-  color: #ccc;
+  color: var(--color-white-04);
 }
 
 .footer-copyRight {
-  border-top: 1px solid #666;
+  border-top: 1px solid var(--color-black-03);
   padding-top: min_vw_pc(20);
   text-align: center;
-  color: #999;
+  color: var(--color-black-04);
   font-size: min_vw_pc(13);
 }
 

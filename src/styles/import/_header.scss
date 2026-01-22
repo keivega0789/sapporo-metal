@@ -6,17 +6,17 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  background: #555;
-  border-bottom: min_vw_pc(2) solid #333;
+  background: var(--color-black-02);
+  // border-bottom: min_vw_pc(2) solid var(--color-black-01);
   z-index: 1000;
   box-shadow: 0 min_vw_pc(2) min_vw_pc(4) rgba(0, 0, 0, 0.1);
 }
 
 .announcement {
-  background-color: #666;
+  background-color: var(--color-black-03);
   text-align: center;
-  color: white;
-  border-bottom: 1px solid #444;
+  color: var(--color-white-01);
+  // border-bottom: 1px solid #444;
   overflow: hidden;
   min-height: 3rem;
 }
@@ -33,7 +33,7 @@ header {
   display: inline-block;
 
   strong {
-    color: #ffff00;
+    color: var(--color-yellow-01);
   }
 }
 
@@ -74,7 +74,7 @@ header {
   flex-direction: column;
   font-size: min_vw_pc(36);
   font-weight: bold;
-  color: white;
+  color: var(--color-white-01);
   white-space: nowrap;
   line-height: 1.3;
   span {
@@ -94,17 +94,17 @@ header {
   align-items: center;
   gap: min_vw_pc(5);
   white-space: nowrap;
-  color: white;
+  color: var(--color-white-01);
 
   strong {
     font-size: min_vw_pc(20);
-    color: #ffff00;
+    color: var(--color-yellow-01);
   }
 }
 
 .special-hours {
   font-size: min_vw_pc(20);
-  color: #ffff00;
+  color: var(--color-yellow-01);
   margin-top: 0;
   font-weight: bold;
 }
@@ -113,18 +113,18 @@ header {
   display: flex;
   align-items: center;
   gap: min_vw_pc(8);
-  background-color: #f0f0f0;
-  color: #555;
+  background-color: var(--color-white-03);
+  color: var(--color-black-02);
   padding: min_vw_pc(8) min_vw_pc(16);
   border-radius: min_vw_pc(6);
   font-weight: bold;
   font-size: min_vw_pc(36);
-  border: min_vw_pc(2) solid #999;
+  border: min_vw_pc(2) solid var(--color-black-04);
   white-space: nowrap;
   flex-shrink: 0;
 
   a {
-    color: #555;
+    color: var(--color-black-02);
     text-decoration: none;
     font-weight: bold;
 
@@ -153,21 +153,21 @@ header {
 }
 
 .company-link {
-  color: white;
-  border: 0.1rem solid white;
+  color: var(--color-white-01);
+  border: 0.1rem solid var(--color-white-01);
 
   @include hover {
-    background-color: white;
-    color: #555;
+    background-color: var(--color-white-01);
+    color: var(--color-black-02);
   }
 }
 
 .line-link {
-  background-color: #00b900;
-  color: white;
+  background-color: var(--color-green-01);
+  color: var(--color-white-01);
 
   @include hover {
-    background-color: #009900;
+    background-color: var(--color-green-02);
   }
 }
 

@@ -8,7 +8,7 @@
 }
 
 .metal-item {
-  background: white;
+  background: var(--color-white-01);
   border-radius: 0.8rem;
   box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
   display: flex;
@@ -41,26 +41,26 @@
 .metal-name {
   font-size: min_vw_pc(32);
   font-weight: bold;
-  color: #555;
+  color: var(--color-black-02);
   line-height: 1;
 }
 
 .metal-price {
   font-size: min_vw_pc(40);
-  color: #e74c3c;
+  color: var(--color-red-01);
   font-weight: bold;
   margin-bottom: min_vw_pc(6);
   line-height: 1.3;
 
   span {
     font-size: min_vw_pc(20);
-    color: #555;
+    color: var(--color-black-02);
   }
 }
 
 .metal-description {
   font-size: min_vw_pc(18);
-  color: #666;
+  color: var(--color-black-03);
   line-height: 1.6;
   flex: 1;
 }
