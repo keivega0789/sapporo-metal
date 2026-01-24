@@ -3,8 +3,8 @@
 
 .metals-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min_vw_pc(400), 1fr));
-  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp_auto(5, 10);
 }
 
 .metal-item {
@@ -13,12 +13,13 @@
   box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  height: min_vw_pc(450);
   overflow: hidden;
+  height: 100%;
 }
 
 .metal-img {
   width: 100%;
+  height: clamp_auto(140, 300);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,104 +28,47 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    aspect-ratio: 1360 / 550;
+    // aspect-ratio: 1360 / 550;
   }
 }
 
 .metal-details {
-  padding: min_vw_pc(20);
-  flex: 1;
+  padding: clamp_auto(5, 20);
   display: flex;
   flex-direction: column;
 }
 
 .metal-name {
-  font-size: min_vw_pc(32);
+  font-size: clamp_auto(17, 32);
   font-weight: bold;
   color: var(--color-black-02);
   line-height: 1;
 }
 
 .metal-price {
-  font-size: min_vw_pc(40);
+  font-size: clamp_auto(28, 40);
   color: var(--color-red-01);
   font-weight: bold;
   margin-bottom: min_vw_pc(6);
   line-height: 1.3;
 
   span {
-    font-size: min_vw_pc(20);
+    font-size: clamp_auto(16, 20);
     color: var(--color-black-02);
   }
 }
 
 .metal-description {
-  font-size: min_vw_pc(18);
+  font-size: clamp_auto(14, 18);
   color: var(--color-black-03);
-  line-height: 1.6;
-  flex: 1;
+  line-height: 1.3;
 }
 
-@include mq(max, sm) {
-  .metal-item {
-    height: vw_sp(230);
-  }
-  .metal-img {
-    height: vw_sp(100);
-  }
-  .metal-details {
-    padding: vw_sp(5);
-  }
-  .metal-name {
-    font-size: vw_sp(16);
-  }
-  .metal-price {
-    min-height: vw_sp(36);
-    font-size: vw_sp(28);
-    span {
-      font-size: vw_sp(16);
-    }
-    &.sm {
-      font-size: vw_sp(16);
-      line-height: 1.5;
-    }
-  }
-  .metal-description {
-    font-size: vw_sp(14);
-    line-height: 1.3;
-  }
-}
-
-@include mq(min-max, sm, md) {
-  .metal-item {
-    height: vw_sp(170);
-  }
-  .metal-img {
-    height: vw_sp(80);
-  }
-  .metal-details {
-    padding: vw_sp(8);
-  }
-  .metal-name {
-    font-size: vw_sp(16);
-  }
-  .metal-price {
-    min-height: vw_sp(30);
-    font-size: vw_sp(15);
-
-    span {
-      font-size: vw_sp(14);
-    }
-  }
-  .metal-description {
-    font-size: vw_sp(9);
-    line-height: 1.3;
-  }
-}
-
-@include mq(max, md) {
+@include mq(min, sm) {
   .metals-list {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(min_vw_pc(400), 1fr));
+  }
+  .metal-description {
+    line-height: 1.6;
   }
 }
