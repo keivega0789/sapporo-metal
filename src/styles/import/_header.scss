@@ -5,33 +5,29 @@ header {
   position: sticky;
   top: 0;
   left: 0;
-  right: 0;
   background: var(--color-black-02);
-  // border-bottom: min_vw_pc(2) solid var(--color-black-01);
-  z-index: 1000;
-  box-shadow: 0 min_vw_pc(2) min_vw_pc(4) rgba(0, 0, 0, 0.1);
+  z-index: 9999;
 }
 
 .announcement {
   background-color: var(--color-black-03);
   text-align: center;
   color: var(--color-white-01);
-  // border-bottom: 1px solid #444;
   overflow: hidden;
-  min-height: 3rem;
+  padding: clamp_auto(10, 15) clamp_auto(10, 20);
+  font-size: clamp_auto(14, 18);
+  display: none;
 }
 
 .announcement-list {
   display: flex;
-  animation: scroll 15s linear infinite;
+  animation: scroll 20s linear infinite;
   white-space: nowrap;
   height: 100%;
 }
 
 .announcement-item {
-  padding: 0 min_vw_pc(30);
   display: inline-block;
-
   strong {
     color: var(--color-yellow-01);
   }
@@ -47,104 +43,100 @@ header {
 }
 
 .header-inner {
-  max-width: min_vw_pc(1440);
-  margin: 0 auto;
-  padding: min_vw_pc(12) min_vw_pc(20);
+  padding: clamp_auto(5, 12) clamp_auto(5, 20);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  // flex-wrap: nowrap;
-  gap: min_vw_pc(20);
+  gap: clamp_auto(10, 20);
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
 }
 
 .company-info {
   display: flex;
-  align-items: center;
-  gap: min_vw_pc(30);
+  flex-direction: row;
+  gap: clamp_auto(10, 30);
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .company-contact {
   display: flex;
-  align-items: center;
-  gap: min_vw_pc(15);
+  flex-direction: column;
+  gap: clamp_auto(5, 15);
+  align-items: flex-start;
 }
 
 .company-name {
   display: flex;
   flex-direction: column;
-  font-size: min_vw_pc(36);
+  font-size: clamp_auto(26, 36);
   font-weight: bold;
   color: var(--color-white-01);
   white-space: nowrap;
   line-height: 1.3;
   span {
-    font-size: min_vw_pc(18);
+    font-size: clamp_auto(13, 18);
   }
 }
 
 .hours {
   display: flex;
   flex-direction: column;
-  gap: min_vw_pc(8);
 }
 
 .contact {
-  font-size: min_vw_pc(20);
+  font-size: clamp_auto(18, 20);
   display: flex;
   align-items: center;
-  gap: min_vw_pc(5);
+  gap: 0.5rem;
   white-space: nowrap;
   color: var(--color-white-01);
 
   strong {
-    font-size: min_vw_pc(20);
     color: var(--color-yellow-01);
   }
 }
 
 .special-hours {
-  font-size: min_vw_pc(20);
+  font-size: clamp_auto(14, 20);
   color: var(--color-yellow-01);
-  margin-top: 0;
   font-weight: bold;
 }
 
 .phone {
   display: flex;
+  gap: 0.5rem;
   align-items: center;
-  gap: min_vw_pc(8);
-  background-color: var(--color-white-03);
+  background: var(--color-white-03);
   color: var(--color-black-02);
-  padding: min_vw_pc(8) min_vw_pc(16);
-  border-radius: min_vw_pc(6);
+  padding: clamp_auto(4, 8) clamp_auto(7, 14);
+  border-radius: clamp_auto(3, 6);
   font-weight: bold;
-  font-size: min_vw_pc(36);
-  border: min_vw_pc(2) solid var(--color-black-04);
+  font-size: clamp_auto(16, 36);
+  border: 1px solid var(--color-black-04);
   white-space: nowrap;
-  flex-shrink: 0;
-
   a {
-    color: var(--color-black-02);
-    text-decoration: none;
-    font-weight: bold;
-
-    @include hover {
-      text-decoration: underline;
+    opacity: 1;
+    transition:
+      opacity,
+      color 0.3s;
+    @include hover() {
+      opacity: 0.5;
+      color: var(--color-green-01);
     }
   }
 }
 
 .header-links {
   display: flex;
-  gap: min_vw_pc(15);
-  justify-content: stretch;
-  width: min_vw_pc(400);
+  gap: 0.5rem;
+  font-size: clamp_auto(12, 16);
+  justify-content: center;
 
   a {
-    width: 100%;
-    font-size: min_vw_pc(16);
-    padding: min_vw_pc(8) min_vw_pc(8);
-    border-radius: 4px;
+    flex: 1;
+    padding: clamp_auto(4, 8);
+    border-radius: clamp_auto(2, 4);
     text-decoration: none;
     text-align: center;
     font-weight: bold;
@@ -156,7 +148,7 @@ header {
   color: var(--color-white-01);
   border: 0.1rem solid var(--color-white-01);
 
-  @include hover {
+  @include hover() {
     background-color: var(--color-white-01);
     color: var(--color-black-02);
   }
@@ -166,7 +158,7 @@ header {
   background-color: var(--color-green-01);
   color: var(--color-white-01);
 
-  @include hover {
+  @include hover() {
     background-color: var(--color-green-02);
   }
 }
@@ -176,76 +168,27 @@ main {
   padding-inline: var(--inline-spacing);
 }
 
-@include mq(max, sm) {
+@include mq(min, sm) {
   .announcement {
-    display: none;
-  }
-  .company-name {
-    font-size: vw_sp(26);
-    span {
-      font-size: vw_sp(13);
-    }
-  }
-  .contact {
-    font-size: vw_sp(18);
-    gap: vw_sp(3);
-    strong {
-      font-size: vw_sp(18);
-    }
-  }
-  .special-hours {
-    font-size: vw_sp(14);
-  }
-  .phone {
-    font-size: vw_sp(16);
-    padding: vw_sp(4) vw_sp(8);
-    gap: vw_sp(4);
+    display: block;
   }
   .header-inner {
-    flex-direction: column;
-    gap: vw_sp(8);
-    padding: 0.5rem;
-    align-items: stretch;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
   .company-info {
     flex-direction: row;
-    gap: vw_sp(20);
-    width: 100%;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
   }
   .company-contact {
-    flex-direction: column;
-    gap: vw_sp(3);
-    align-items: flex-start;
-  }
-  .hours {
-    gap: vw_sp(4);
+    flex-direction: row;
+    align-items: center;
   }
   .header-links {
-    width: 100%;
-    gap: vw_sp(8);
-    justify-content: center;
-    a {
-      flex: 1;
-      text-align: center;
-      padding: vw_sp(4) vw_sp(6);
-      font-size: vw_sp(12);
-    }
-  }
-}
-
-@include mq(min, sm) {
-  .announcement {
-    padding: min_vw_pc(12) min_vw_pc(20);
-    font-size: min_vw_pc(20);
-  }
-}
-
-@include mq(min-max, sm, md) {
-  main {
-    padding: 1.2rem 1rem;
+    width: clamp_auto(150, 300);
+    justify-content: stretch;
+    gap: min_vw_pc(15);
   }
 }
 
@@ -253,12 +196,6 @@ main {
   .header-links {
     flex-direction: column;
     align-items: stretch;
-    width: min_vw_pc(250);
+    width: clamp_auto(60, 100);
   }
-  .special-hours {
-    font-size: min_vw_pc(16);
-  }
-  // .metal-price {
-  //   font-size: min_vw_pc(36);
-  // }
 }
