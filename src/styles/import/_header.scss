@@ -64,6 +64,14 @@ header {
   flex-direction: column;
   gap: clamp_auto(5, 15);
   align-items: flex-start;
+  > a {
+    opacity: 1;
+    transition: opacity 0.3s;
+
+    @include hover() {
+      opacity: 0.7;
+    }
+  }
 }
 
 .company-name {
@@ -115,15 +123,9 @@ header {
   font-size: clamp_auto(16, 36);
   border: 1px solid var(--color-black-04);
   white-space: nowrap;
-  a {
-    opacity: 1;
-    transition:
-      opacity,
-      color 0.3s;
-    @include hover() {
-      opacity: 0.5;
-      color: var(--color-green-01);
-    }
+  transition: color 0.3s;
+  @include hover() {
+    color: var(--color-green-01);
   }
 }
 
