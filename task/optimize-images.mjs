@@ -3,25 +3,20 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 import { optimize } from 'svgo';
+
 const constants = JSON.parse(await fs.readFile(path.resolve('constants.json')));
 
-const inputDir = `src/images`; // 入力フォルダ
-const outputDir = `${constants.outputPath}../images`; // 出力フォルダ
+const inputDir = 'src/images';
+const outputDir = path.join(constants.outputPath, 'images'); // public/images
 
 const args = process.argv.slice(2);
-const isPersistent = !args.includes('--no-watch'); // --no-persistent 引数が無ければ persistent: true とする
+const isPersistent = !args.includes('--no-watch');
 
 // 文字色
 const green = '\u001b[32m';
 const yellow = '\u001b[33m';
 const red = '\u001b[31m';
 const reset = '\u001b[0m';
-
-// 監視用のchokidar watcher
-const watcher = chokidar.watch(inputDir, {
-  ignored: /(^|[\/\\])\../,
-  persistent: isPersistent
-});
 
 // SVGの最適化
 const optimizeSvg = async (filePath, outputPath) => {
@@ -31,13 +26,9 @@ const optimizeSvg = async (filePath, outputPath) => {
     plugins: [
       {
         name: 'preset-default',
-        params: {
-          overrides: {
-            removeViewBox: false // ViewBoxを削除しない
-          }
-        }
-      }
-    ]
+      },
+      'removeViewBox',
+    ],
   });
 
   if ('data' in result) {
@@ -46,19 +37,14 @@ const optimizeSvg = async (filePath, outputPath) => {
 };
 
 // 画像圧縮処理
-const compressImage = async (filePath) => {
+const compressImage = async filePath => {
   try {
     const ext = path.extname(filePath).toLowerCase();
-    const relativePath = path.relative(inputDir, filePath); // 入力パスから相対パスを取得
-    const outputFilePath = path.join(outputDir, relativePath); // 出力先ファイルのパス
-    const outputDirPath = path.dirname(outputFilePath); // 出力先ディレクトリ
+    const relativePath = path.relative(inputDir, filePath);
+    const outputFilePath = path.join(outputDir, relativePath);
+    const outputDirPath = path.dirname(outputFilePath);
 
     // 出力先ディレクトリがない場合は作成
-    try {
-      await fs.mkdir(outputDirPath, { recursive: true });
-    } catch (error) {
-      console.log(`${red} Error compressing ${outputDirPath}:${reset}`, error);
-    }
     await fs.mkdir(outputDirPath, { recursive: true });
 
     // SVGの場合、svgoで圧縮
@@ -71,6 +57,7 @@ const compressImage = async (filePath) => {
     // .icoと.json はそのまま出力
     if (ext === '.ico' || ext === '.json') {
       await fs.copyFile(filePath, outputFilePath);
+      console.log(`${green}Copied:${reset} ${filePath}`);
       return;
     }
 
@@ -101,22 +88,27 @@ const compressImage = async (filePath) => {
 
     console.log(`${green}Compressed:${reset} ${filePath}`);
   } catch (error) {
-    console.log(`${red} Error compressing ${filePath}:${reset}`, error);
+    console.log(`${red}Error compressing ${filePath}:${reset}`, error);
   }
 };
 
-// watcherでのファイル変更監視
+// 監視用のchokidar watcher
+const watcher = chokidar.watch(inputDir, {
+  ignored: /(^|[\/\\])\../,
+  persistent: isPersistent,
+});
+
 watcher
   .on('ready', () => console.log('Watching for image changes...'))
   .on('add', compressImage)
   .on('change', compressImage)
-  .on('unlink', async (filePath) => {
+  .on('unlink', async filePath => {
     const relativePath = path.relative(inputDir, filePath);
     const outputFilePath = path.join(outputDir, relativePath);
     try {
       await fs.unlink(outputFilePath);
       console.log(`${yellow}Deleted:${reset} ${outputFilePath}`);
     } catch (error) {
-      console.log(`${red} Failed to delete ${outputFilePath}:${reset}`, error);
+      console.log(`${red}Failed to delete ${outputFilePath}:${reset}`, error);
     }
   });
