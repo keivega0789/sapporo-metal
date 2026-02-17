@@ -19,7 +19,7 @@ export default defineConfig({
         assetFileNames: assetInfo => {
           // 画像ファイルはimages/に配置
           if (/\.(png|jpe?g|svg|gif|webp|avif|ico)$/i.test(assetInfo.name)) {
-            return 'images/[name][extname]';
+            return 'assets/images/[name][extname]';
           }
           // CSSとその他のアセット
           return 'assets/[name]-[hash][extname]';

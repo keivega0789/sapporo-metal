@@ -7,7 +7,7 @@ import { optimize } from 'svgo';
 const constants = JSON.parse(await fs.readFile(path.resolve('constants.json')));
 
 const inputDir = 'src/images';
-const outputDir = path.join(constants.outputPath, 'images'); // public/images
+const outputDir = path.join(constants.outputPath, 'images'); // public/assets/images
 
 const args = process.argv.slice(2);
 const isPersistent = !args.includes('--no-watch');
