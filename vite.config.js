@@ -26,6 +26,10 @@ export default defineConfig({
         },
         chunkFileNames: 'assets/[name]-[hash].js',
         entryFileNames: 'assets/[name]-[hash].js',
+        // main.jsを共通チャンクとして扱う
+        manualChunks: {
+          main: [path.resolve(__dirname, 'src/scripts/main.js')],
+        },
       },
     },
     assetsInlineLimit: 0, // 画像を全てファイルとして出力（Base64化しない）
