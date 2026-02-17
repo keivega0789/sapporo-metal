@@ -10,6 +10,9 @@ export default defineConfig({
   build: {
     outDir: 'docs',
     emptyOutDir: true, // ビルド前にdocsを空にする
+    modulePreload: {
+      polyfill: false, // ポリフィルを無効化
+    },
     rollupOptions: {
       input: {
         index: path.resolve(__dirname, 'index.html'),
