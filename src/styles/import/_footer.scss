@@ -15,21 +15,8 @@ footer {
 }
 
 .footer-item {
-  p {
-    font-size: clamp_auto(13, 16);
-    line-height: 1.2;
-    color: var(--color-white-02);
-
-    strong {
-      font-size: clamp_auto(20, 24);
-      line-height: 1;
-      span {
-        font-size: clamp_auto(12, 14);
-      }
-    }
-  }
   &:nth-child(3) {
-    p {
+    .footer-label-description {
       span {
         font-size: clamp_auto(13, 16);
       }
@@ -42,6 +29,20 @@ footer {
   margin-bottom: clamp_auto(8, 15);
   font-size: clamp_auto(16, 20);
   color: var(--color-white-04);
+}
+
+.footer-label-description {
+  font-size: clamp_auto(13, 16);
+  line-height: 1.2;
+  color: var(--color-white-02);
+
+  strong {
+    font-size: clamp_auto(20, 24);
+    line-height: 1;
+    span {
+      font-size: clamp_auto(12, 14);
+    }
+  }
 }
 
 .footer-copyRight {
